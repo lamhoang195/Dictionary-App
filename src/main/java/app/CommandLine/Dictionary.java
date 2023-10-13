@@ -49,15 +49,37 @@ public class Dictionary {
                 return;
             }
         }
-        System.out.println("Word not found , update word failed!");
+        System.out.println("Word not found, update word failed!");
     }
 
-    private int binarySearchWord(String English) {
+    public String lookupWord(String wordTarget) {
+        int index = binarySearchWord(wordTarget);
+        if (index >= 0) {
+            return "Work Explain: " + words.get(index).getWordExplain();
+        }
+        return "Work not found, lookup word failed!";
+    }
+
+    //Ti kiếm index từ
+    private int searchIndexInsert(int start, int end, String wordTarget) {
+        if (end < start) return start;
+        int mid = start + (end - start) / 2;
+        if (mid == words.size()) return mid;
+        Word word = words.get(mid);
+        int compare = word.getWordTarget().compareTo(wordTarget);
+        if (compare == 0) return -1;
+        if (compare > 0) return searchIndexInsert(start, mid - 1, wordTarget);
+        return searchIndexInsert(mid + 1, end, wordTarget);
+    }
+
+    //Tìm kiếm
+    private int binarySearchWord(String wordTarget) {
+        words.sort(new SortDictionaryByWord());
         int left = 0;
         int right = words.size() - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int compareResult = words.get(mid).getWordTarget().compareTo(English);
+            int compareResult = words.get(mid).getWordTarget().compareTo(wordTarget);
             if (compareResult == 0) {
                 return mid;
             } else if (compareResult < 0) {
@@ -74,17 +96,6 @@ public class Dictionary {
         ArrayList<Word> wordList = new ArrayList<>(words);
         Collections.sort(wordList, (word1, word2) -> word1.getWordTarget().compareToIgnoreCase(word2.getWordTarget()));
         words = new ArrayList<>(wordList);
-    }
-
-    private int searchIndexInsert(int start, int end, String wordTarget) {
-        if (end < start) return start;
-        int mid = start + (end - start) / 2;
-        if (mid == words.size()) return mid;
-        Word word = words.get(mid);
-        int compare = word.getWordTarget().compareTo(wordTarget);
-        if (compare == 0) return -1;
-        if (compare > 0) return searchIndexInsert(start, mid - 1, wordTarget);
-        return searchIndexInsert(mid + 1, end, wordTarget);
     }
 
     private Word binaryLookup(int start, int end, String wordTarget) {

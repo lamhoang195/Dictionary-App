@@ -94,4 +94,9 @@ public class DictionaryManagement extends Dictionary{
         dictionary.updateWord(wordTarget, wordExplain);
         exportToFile(dictionary);
     }
+
+    public String dictionaryLookup(String wordTarget) {
+        wordTarget = wordTarget.toLowerCase();
+        return dictionary.lookupWord(wordTarget);
+    }
 }
