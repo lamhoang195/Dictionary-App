@@ -66,19 +66,23 @@ public class DictionaryCommandLine {
                     break;
                 case 5:
                     System.out.print("Enter a word to lookup: ");
-                    management.dictionaryLookup();
+                    String wordSearch = sc.nextLine();
+                    System.out.println(management.dictionaryLookup(wordSearch));
                     break;
                 case 6:
                     System.out.print("Enter a prefix to search: ");
                     String searchPrefix = sc.nextLine();
+                    //management.searcher(searchPrefix);
                     break;
                 case 7:
                     break;
                 case 8:
-                    System.out.print("Enter the file name to import from: ");
+                    management.exportToFile(dictionary);
+                    System.out.println("Import to file succesfully!");
                     break;
                 case 9:
-                    System.out.print("Enter the file name to export to: ");
+                    management.exportToFile(dictionary);
+                    System.out.println("Export to file succesfully!");
                     break;
                 default:
                     System.out.println("Action not supported.");

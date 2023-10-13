@@ -1,20 +1,33 @@
 a	một
 abandoned	bỏ hoang
 abilities	khả năng
+ability	khả năng
 able	có khả năng
 aboriginal	thổ dân
 abortion	phá thai
+about	về
+above	ở trên
+abroad	ở nước ngoài
+abs	cơ bụng
+absence	vắng mặt
+absent	vắng mặt
 absolute	tuyệt đối
 absolutely	hoàn toàn
 absorption	sự hấp thụ
 abstract	trừu tượng
 abstracts	tóm tắt
+abuse	lạm dụng
 academic	học
 academics	học thuật
+academy	học viện
+accent	giọng nói
+accept	chấp nhận
 acceptable	chấp nhận được
 acceptance	chấp nhận
 accepted	chấp nhận
 accepting	chấp nhận
+accepts	chấp nhận
+access	truy cập
 accessed	truy cập
 accessibility	khả năng tiếp cận
 accessible	có thể truy cập
@@ -33,6 +46,7 @@ accomplished	hoàn thành
 accordance	theo quy định
 according	theo
 accordingly	phù hợp
+account	tài khoản
 accountability	trách nhiệm
 accounting	kế toán
 accounts	tài khoản
@@ -43,16 +57,30 @@ accurate	chính xác
 accurately	chính xác
 accused	bị cáo
 acdbentity	thành công
+ace	át chủ bài
+achieve	đạt được
 achieved	đạt được
 achievement	thành tích
 achievements	thành tích
 achieving	đạt được
+acid	axit
+acids	axit
 acknowledge	thừa nhận
 acknowledged	thừa nhận
+acne	mụn trứng cá
 acoustic	âm thanh
+acquire	có được
 acquired	mua lại
 acquisition	mua lại
 acquisitions	mua lại
+acre	mẫu anh
+acres	mẫu đất
+acrobat	nhào lộn
+across	qua
+act	hành động
+acting	diễn xuất
+action	hành động
+actions	hành động
 activated	kích hoạt
 activation	kích hoạt
 active	hoạt động
