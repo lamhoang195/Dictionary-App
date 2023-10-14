@@ -72,7 +72,7 @@ public class DictionaryCommandLine {
                 case 6:
                     System.out.print("Enter a prefix to search: ");
                     String searchPrefix = sc.nextLine();
-                    //management.searcher(searchPrefix);
+                    management.searcher(searchPrefix);
                     break;
                 case 7:
                     break;
