@@ -108,21 +108,7 @@ public class Dictionary {
         if (compare > 0) return binaryLookup(start, mid - 1, wordTarget);
         return binaryLookup(mid + 1, end, wordTarget);
     }
-
-    private int binarySearcher(int start, int end, String wordTarget) {
-        if (end < start) return -1;
-        int mid = start + (end - start) / 2;
-        Word word = words.get(mid);
-        String currentSpelling = word.getWordTarget();
-        if (currentSpelling.startsWith(wordTarget)) {
-            return mid;
-        }
-        int compare = currentSpelling.compareTo(wordTarget);
-        if (compare == 0) return mid;
-        if (compare > 0) return binarySearcher(start, mid - 1, wordTarget);
-        return binarySearcher(mid + 1, end, wordTarget);
-    }
-
+    
     public Word lookup(String wordTarget) {
         return binaryLookup(0, words.size() - 1, wordTarget);
     }

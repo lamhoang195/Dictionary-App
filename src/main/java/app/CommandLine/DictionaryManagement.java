@@ -45,7 +45,7 @@ public class DictionaryManagement extends Dictionary{
                 String[] parts = lineWord.split("\t");
                 if (parts.length == 2) {
                     if (!validWord(parts[0])) {
-                        System.out.println(parts[0] + " is not English Word" + ". So that, cannot import word to dictionary");
+                        System.out.println(parts[0] + " is not English Word" + ". Import word to dictionary");
                     } else {
                         dictionary.addWord(new Word(parts[0], parts[1]));
                     }
@@ -98,5 +98,21 @@ public class DictionaryManagement extends Dictionary{
     public String dictionaryLookup(String wordTarget) {
         wordTarget = wordTarget.toLowerCase();
         return dictionary.lookupWord(wordTarget);
+    }
+
+    public void searcher(String prefixWord) {
+        List<Word> result = new ArrayList<>();
+        for (Word word : dictionary.getWords()) {
+            if (word.getWordTarget().startsWith(prefixWord)) {
+                result.add(word);
+            }
+        }
+        if (!result.isEmpty()) {
+            for (Word word : result) {
+                System.out.println(word.getWordTarget() + ": " + word.getWordExplain());
+            }
+        } else {
+            System.out.println("No found prefix word!");
+        }
     }
 }
