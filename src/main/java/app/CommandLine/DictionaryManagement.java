@@ -12,10 +12,6 @@ public class DictionaryManagement extends Dictionary{
         this.dictionary = dictionary;
     }
 
-    public void showAllWords(){
-        dictionary.displayAllWord();
-    }
-
     //Nhập dữ liệu từ dòng lệnh
     public void insertFromCommandLine() {
         Scanner sc = new Scanner(System.in);
@@ -25,10 +21,10 @@ public class DictionaryManagement extends Dictionary{
         for (int i = 0; i < word_size; ++i) {
             System.out.print((i + 1) + ". English: ");
             String wordTarget = sc.nextLine();
-            wordTarget.toLowerCase();
+            wordTarget = wordTarget.toLowerCase();
             System.out.print("   Vietnamese: ");
             String wordExplain = sc.nextLine();
-            wordExplain.toLowerCase();
+            wordExplain = wordExplain.toLowerCase();
             Word word = new Word(wordTarget, wordExplain);
             dictionary.addWord(word);
             exportToFile(dictionary);
