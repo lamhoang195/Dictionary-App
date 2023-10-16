@@ -12,9 +12,10 @@ public class Dictionary {
 
     //Hiển thị từ
     public void displayAllWord() {
-        System.out.println("No   |       English     |     Vietnamese");
+        System.out.println("No   |   English         |   Vietnamese");
+        System.out.println("--------------------------------------------");
         for (int i = 0; i < words.size(); ++i) {
-            System.out.println((i + 1) + "     |  " + words.get(i).getWordTarget() + "     |  " + words.get(i).getWordExplain());
+            System.out.printf("%-4d |   %-15s |   %-15s%n", (i + 1), words.get(i).getWordTarget(), words.get(i).getWordExplain());
         }
     }
 
@@ -96,21 +97,6 @@ public class Dictionary {
         ArrayList<Word> wordList = new ArrayList<>(words);
         Collections.sort(wordList, (word1, word2) -> word1.getWordTarget().compareToIgnoreCase(word2.getWordTarget()));
         words = new ArrayList<>(wordList);
-    }
-
-    private Word binaryLookup(int start, int end, String wordTarget) {
-        if (end < start) return null;
-        int mid = start + (end - start) / 2;
-        Word word = words.get(mid);
-        String currentWordTarget = word.getWordTarget();
-        int compare = currentWordTarget.compareTo(wordTarget);
-        if (compare == 0) return word;
-        if (compare > 0) return binaryLookup(start, mid - 1, wordTarget);
-        return binaryLookup(mid + 1, end, wordTarget);
-    }
-    
-    public Word lookup(String wordTarget) {
-        return binaryLookup(0, words.size() - 1, wordTarget);
     }
 
     public ArrayList<Word> getWords() {
