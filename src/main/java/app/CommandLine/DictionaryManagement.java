@@ -12,26 +12,25 @@ public class DictionaryManagement extends Dictionary{
         this.dictionary = dictionary;
     }
 
-    //Nhập dữ liệu từ dòng lệnh
-    public void insertFromCommandLine() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Number words you need: ");
-        int word_size = sc.nextInt();
-        sc.nextLine();
-        for (int i = 0; i < word_size; ++i) {
-            System.out.print((i + 1) + ". English: ");
-            String wordTarget = sc.nextLine();
-            wordTarget = wordTarget.toLowerCase();
-            System.out.print("   Vietnamese: ");
-            String wordExplain = sc.nextLine();
-            wordExplain = wordExplain.toLowerCase();
-            Word word = new Word(wordTarget, wordExplain);
-            dictionary.addWord(word);
-            exportToFile(dictionary);
+    /**
+     * check valid word.
+     *
+     * @param word - word
+     * @return true if valid, false if not valid
+     */
+    public boolean validWord(String word) {
+        for (int i = 0; i < word.length(); ++i) {
+            if (!Character.isLetter(word.charAt(i)))
+                return false;
         }
+        return true;
     }
 
-    //Nhập dữ liệu từ dictionaries.txt
+    /**
+     * Import words from file
+     *
+     * @param path path-dictionary.txt
+     */
     public void insertFromFile(String path) {
         try {
             FileReader fileReader = new FileReader(path);
@@ -55,7 +54,10 @@ public class DictionaryManagement extends Dictionary{
         }
     }
 
-    //Xuất file ra
+    /**
+     * Export to file.
+     *
+     */
     public void exportToFile(Dictionary dictionary) {
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/data/dictionaries_out.txt");
@@ -70,33 +72,68 @@ public class DictionaryManagement extends Dictionary{
         }
     }
 
-    public boolean validWord(String s) {
-        for (int i = 0; i < s.length(); ++i) {
-            if (!Character.isLetter(s.charAt(i))) return false;
+    /**
+     * Insert word from commandline.
+     *
+     */
+    public void insertFromCommandLine() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number words you need: ");
+        int word_size = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < word_size; ++i) {
+            System.out.print((i + 1) + ". English: ");
+            String wordTarget = sc.nextLine();
+            wordTarget = wordTarget.toLowerCase();
+            System.out.print("   Vietnamese: ");
+            String wordMeaning = sc.nextLine();
+            wordMeaning = wordMeaning.toLowerCase();
+            Word word = new Word(wordTarget, wordMeaning);
+            dictionary.addWord(word);
+            exportToFile(dictionary);
         }
-        return true;
     }
 
-    //Xóa từ trong dictionaries_out.txt
+    /**
+     * Remove word.
+     *
+     * @param English word in English
+     */
     public void removeWord(String English) {
         dictionary.removeWord(English);
         exportToFile(dictionary);
     }
 
-    //Sửa từ trong dictionaries_out.txt
-    public void updateWord(String wordTarget, String wordExplain) {
+    /**
+     * Update word meaning
+     *
+     * @param wordTarget    word in English
+     * @param wordMeaning   word meaning
+     */
+    public void updateWord(String wordTarget, String wordMeaning) {
         wordTarget = wordTarget.toLowerCase();
-        wordExplain = wordExplain.toLowerCase();
-        dictionary.updateWord(wordTarget, wordExplain);
+        wordMeaning = wordMeaning.toLowerCase();
+        dictionary.updateWord(wordTarget, wordMeaning);
         exportToFile(dictionary);
     }
 
+    /**
+     * Look up.
+     *
+     * @param wordTarget word in English
+     * @return mean in Vietnamese
+     */
     public String dictionaryLookup(String wordTarget) {
         wordTarget = wordTarget.toLowerCase();
         return dictionary.lookupWord(wordTarget);
     }
 
-    public void searcher(String prefixWord) {
+    /**
+     * search by prefix
+     *
+     * @param prefixWord prefix
+     */
+    public void searchByPrefix(String prefixWord) {
         List<Word> result = new ArrayList<>();
         for (Word word : dictionary.getWords()) {
             if (word.getWordTarget().startsWith(prefixWord)) {
