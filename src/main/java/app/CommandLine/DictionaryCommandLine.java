@@ -10,14 +10,22 @@ public class DictionaryCommandLine {
         this.dictionary = dictionary;
     }
 
-    public void showAllWords(){
-        dictionary.displayAllWord();
+    public void showAllWords() {
+        dictionary.displayWords();
     }
 
-    public void dictionaryBasic(){
+    public void dictionaryBasic() {
         DictionaryManagement management = new DictionaryManagement(dictionary);
         management.insertFromCommandLine();
         showAllWords();
+    }
+
+    public Dictionary getDictionary() {
+        return dictionary;
+    }
+
+    public void setDictionary(Dictionary dictionary) {
+        this.dictionary = dictionary;
     }
 
     public void displayAdvance() {
@@ -36,6 +44,7 @@ public class DictionaryCommandLine {
             System.out.println("[7] Game");
             System.out.println("[8] Import from file");
             System.out.println("[9] Export to file");
+            System.out.println("[10] Mini game");
             System.out.print("Your action: ");
             int choice = sc.nextInt();
             sc.nextLine();
@@ -73,9 +82,29 @@ public class DictionaryCommandLine {
                 case 6:
                     System.out.print("Enter a prefix to search: ");
                     String searchPrefix = sc.nextLine();
-                    management.searcher(searchPrefix);
+                    management.searchByPrefix(searchPrefix);
                     break;
                 case 7:
+                    System.out.println("You have 5 turns to guess the meaning of the word");
+                    System.out.println("Type C - Enter to Continue or ESC-Enter to Exit");
+                    Scanner choose = new Scanner(System.in);
+                    System.out.println("Your choice: ");
+                    String option;
+                    option = choose.nextLine();
+                    if (option.equals("C")) {
+                        Game gm = new Game();
+                        while (!option.equals("ESC")) {
+                            Game plGame = new Game();
+                            Word  targetWord = plGame.getRandomWord(this.dictionary);
+                            plGame.playGame(targetWord);
+                            System.out.println("Type C - Enter to Continue or ESC-Enter to Exit");
+                            option = sc.nextLine();
+                        }
+
+                    }
+                    else {
+                        break;
+                    }
                     break;
                 case 8:
                     management.exportToFile(dictionary);
@@ -85,25 +114,19 @@ public class DictionaryCommandLine {
                     management.exportToFile(dictionary);
                     System.out.println("Export to file succesfully!");
                     break;
+                case 10:
+                    System.out.println("You have 5 turns to guess the meaning of the word");
+                    break;
                 default:
                     System.out.println("Action not supported.");
                     break;
             }
-
         }
-    }
-
-    public Dictionary getDictionary() {
-        return dictionary;
-    }
-
-    public void setDictionary(Dictionary dictionary) {
-        this.dictionary = dictionary;
     }
 
     public static void main(String[] args) {
         Dictionary dic = new Dictionary();
         DictionaryCommandLine test = new DictionaryCommandLine(dic);
-        test.displayAdvance();;
+        test.displayAdvance();
     }
 }
