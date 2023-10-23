@@ -4,46 +4,79 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Dictionary {
-    private ArrayList<Word> words = new ArrayList<>();
+    private ArrayList<Word> wordList = new ArrayList<>();
 
-    public Dictionary(){
-        this.words = new ArrayList<>();
+    public Dictionary() {
+        this.wordList = new ArrayList<>();
     }
 
-    //Hiển thị từ
-    public void displayAllWord() {
+    /**
+     * Display wordList.
+     */
+    public void displayWords() {
         System.out.println("No   |   English         |   Vietnamese");
         System.out.println("--------------------------------------------");
-        for (int i = 0; i < words.size(); ++i) {
-            System.out.printf("%-4d |   %-15s |   %-15s%n", (i + 1), words.get(i).getWordTarget(), words.get(i).getWordExplain());
+        for (int i = 0; i < wordList.size(); ++i) {
+            System.out.printf("%-4d |   %-15s |   %-15s%n", (i + 1), wordList.get(i).getWordTarget(), wordList.get(i).getWordExplain());
         }
     }
 
-    //Sắp xếp từ
+    /**
+     * Get words.
+     *
+     * @return wordList
+     */
+    public ArrayList<Word> getWords() {
+        return wordList;
+    }
+
+    /**
+     * Set words.
+     *
+     * @param words wordList
+     */
+    public void setWords(ArrayList<Word> words) {
+        this.wordList = words;
+    }
+
+    /**
+     * add new word.
+     *
+     * @param word new word
+     */
     public void addWord(Word word) {
-        int length = words.size();
+        int length = wordList.size();
         int index = searchIndexInsert(0, length - 1, word.getWordTarget());
         if (index <= length && index >= 0) {
-            words.add(index, word);
+            wordList.add(index, word);
         } else {
             System.out.println("The word already exists");
         }
     }
 
-    //Xóa từ
-    public void removeWord(String English) {
-        int index = binarySearchWord(English);
+    /**
+     * remove E word.
+     *
+     * @param wordTarget E word
+     */
+    public void removeWord(String wordTarget) {
+        int index = binarySearchWord(wordTarget);
         if (index >= 0) {
-            words.remove(index);
+            wordList.remove(index);
             System.out.println("Remove successfully!");
         } else {
             System.out.println("Word not found, no word removed.");
         }
     }
 
-    //Cập nhật từ
+    /**
+     * update word meaning.
+     *
+     * @param wordTarget        word in English
+     * @param updateWordExplain word meaning
+     */
     public void updateWord(String wordTarget, String updateWordExplain) {
-        for (Word word : words) {
+        for (Word word : wordList) {
             if (word.getWordTarget().equals(wordTarget)) {
                 word.setWordExplain(updateWordExplain);
                 System.out.println("Update successfully!");
@@ -53,34 +86,38 @@ public class Dictionary {
         System.out.println("Word not found, update word failed!");
     }
 
-    public String lookupWord(String wordTarget) {
-        int index = binarySearchWord(wordTarget);
-        if (index >= 0) {
-            return "Work Explain: " + words.get(index).getWordExplain();
-        }
-        return "Work not found, lookup word failed!";
-    }
-
-    //Ti kiếm index từ
+    /**
+     * Search word index.
+     *
+     * @param start      start index
+     * @param end        end index
+     * @param wordTarget word in English
+     * @return index
+     */
     private int searchIndexInsert(int start, int end, String wordTarget) {
         if (end < start) return start;
         int mid = start + (end - start) / 2;
-        if (mid == words.size()) return mid;
-        Word word = words.get(mid);
+        if (mid == wordList.size()) return mid;
+        Word word = wordList.get(mid);
         int compare = word.getWordTarget().compareTo(wordTarget);
         if (compare == 0) return -1;
         if (compare > 0) return searchIndexInsert(start, mid - 1, wordTarget);
         return searchIndexInsert(mid + 1, end, wordTarget);
     }
 
-    //Tìm kiếm
+    /**
+     * Find index of word.
+     *
+     * @param wordTarget word in English
+     * @return index or -1 if not found
+     */
     private int binarySearchWord(String wordTarget) {
-        words.sort(new SortDictionaryByWord());
+        wordList.sort(new Sort());
         int left = 0;
-        int right = words.size() - 1;
+        int right = wordList.size() - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int compareResult = words.get(mid).getWordTarget().compareTo(wordTarget);
+            int compareResult = wordList.get(mid).getWordTarget().compareTo(wordTarget);
             if (compareResult == 0) {
                 return mid;
             } else if (compareResult < 0) {
@@ -92,19 +129,27 @@ public class Dictionary {
         return -1;
     }
 
-    //Xắp xếp từ theo alphabet
-    public void sortWord(){
-        ArrayList<Word> wordList = new ArrayList<>(words);
-        Collections.sort(wordList, (word1, word2) -> word1.getWordTarget().compareToIgnoreCase(word2.getWordTarget()));
-        words = new ArrayList<>(wordList);
+    /**
+     * Look up.
+     *
+     * @param wordTarget word in English
+     * @return mean in Vietnamese
+     */
+    public String lookupWord(String wordTarget) {
+        int index = binarySearchWord(wordTarget);
+        if (index >= 0) {
+            return "Work Explain: " + wordList.get(index).getWordExplain();
+        }
+        return "Work not found, lookup word failed!";
     }
 
-    public ArrayList<Word> getWords() {
-        return words;
-    }
-
-    public void setWords(ArrayList<Word> words) {
-        this.words = words;
+    /**
+     * Get word at index i.
+     *
+     * @param index index
+     */
+    public Word getWord(int index) {
+        return wordList.get(index);
     }
 }
 
