@@ -8,8 +8,14 @@ public class DictionaryManagement extends Dictionary{
 
     protected Dictionary dictionary;
 
+    private List<Word> result = new ArrayList<>();
+
     public DictionaryManagement(Dictionary dictionary) {
         this.dictionary = dictionary;
+    }
+
+    public List<Word> getResult() {
+        return result;
     }
 
     /**
@@ -134,7 +140,6 @@ public class DictionaryManagement extends Dictionary{
      * @param prefixWord prefix
      */
     public void searchByPrefix(String prefixWord) {
-        List<Word> result = new ArrayList<>();
         for (Word word : dictionary.getWords()) {
             if (word.getWordTarget().startsWith(prefixWord)) {
                 result.add(word);
@@ -148,4 +153,6 @@ public class DictionaryManagement extends Dictionary{
             System.out.println("No found prefix word!");
         }
     }
+
+
 }
