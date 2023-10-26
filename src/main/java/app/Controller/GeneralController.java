@@ -11,8 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.HTMLEditor;
-import javafx.scene.web.WebView;
+
 
 import java.io.IOException;
 import java.net.URL;
