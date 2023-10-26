@@ -106,7 +106,6 @@ public class SearchController implements Initializable {
         else {
             listWord.setItems(results);
         }
-
     }
 
     @FXML
