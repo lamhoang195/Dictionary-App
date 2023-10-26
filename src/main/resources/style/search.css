@@ -169,3 +169,7 @@
 .button-remove:hover {
     -fx-graphic: url('../media/hover/remove.png');
 }
+
+.button-return {
+    -fx-graphic: url('../media/normal/returnButton.png');
+}

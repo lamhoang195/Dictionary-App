@@ -1,7 +1,11 @@
 package app.CommandLine;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Dictionary {
     private ArrayList<Word> wordList = new ArrayList<>();
@@ -111,7 +115,7 @@ public class Dictionary {
      * @param wordTarget word in English
      * @return index or -1 if not found
      */
-    private int binarySearchWord(String wordTarget) {
+    public int binarySearchWord(String wordTarget) {
         wordList.sort(new Sort());
         int left = 0;
         int right = wordList.size() - 1;
@@ -142,6 +146,7 @@ public class Dictionary {
         }
         return "Work not found, lookup word failed!";
     }
+
 
     /**
      * Get word at index i.
