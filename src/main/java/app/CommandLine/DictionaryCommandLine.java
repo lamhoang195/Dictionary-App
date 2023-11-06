@@ -107,11 +107,11 @@ public class DictionaryCommandLine {
                     }
                     break;
                 case 8:
-                    management.exportToFile(dictionary);
+                    management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
                     System.out.println("Import to file succesfully!");
                     break;
                 case 9:
-                    management.exportToFile(dictionary);
+                    management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
                     System.out.println("Export to file succesfully!");
                     break;
                 case 10:

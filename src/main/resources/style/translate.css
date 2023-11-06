@@ -75,6 +75,10 @@
     -fx-background-color: -hover-purple-color;
 }
 
+.button-return {
+    -fx-graphic: url('../media/normal/returnButton.png');
+}
+
 /* ========================= TextField ========================= */
 
 .text-field {
