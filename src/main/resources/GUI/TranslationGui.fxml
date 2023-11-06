@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="678.0" prefWidth="783.0" styleClass="second-color" stylesheets="@../style/translate.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="main" prefHeight="600.0" prefWidth="817.0" styleClass="second-color" stylesheets="@../style/translate.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.TranslateController">
     <children>
-      <Pane layoutX="42.0" layoutY="120.0" prefHeight="438.0" prefWidth="714.0" stylesheets="@../style/translate.css">
+      <Pane layoutX="51.0" layoutY="121.0" prefHeight="438.0" prefWidth="714.0" stylesheets="@../style/translate.css">
          <children>
             <TextArea layoutY="76.0" prefHeight="262.0" prefWidth="350.0" promptText="Type..." wrapText="true">
                <font>
@@ -23,7 +20,7 @@
                </font>
             </TextArea>
             <TextArea layoutX="369.0" layoutY="76.0" prefHeight="262.0" prefWidth="350.0" />
-            <Button alignment="CENTER" layoutX="329.0" layoutY="384.0" mnemonicParsing="false" styleClass="button-double-arrow" />
+            <Button alignment="CENTER" layoutX="329.0" layoutY="390.0" mnemonicParsing="false" styleClass="button-double-arrow" />
             <Pane layoutY="11.0" prefHeight="46.0" prefWidth="689.0">
                <children>
                   <Label layoutX="121.0" prefHeight="46.0" prefWidth="119.0" text="English" textFill="#b04646">
@@ -50,13 +47,16 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="344.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../media/normal/icons8_data_transfer_48px.png" />
-                     </image>
-                  </ImageView>
                         <Button layoutX="262.0" layoutY="6.0" mnemonicParsing="false" styleClass="button-speak" />
                         <Button layoutX="639.0" layoutY="5.0" mnemonicParsing="false" styleClass="button-speak" />
+                  <Button layoutX="334.0" layoutY="5.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="50.0" textFill="WHITE" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../media/normal/icons8_data_transfer_48px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </children>
             </Pane>
             <Line endX="618.0" layoutX="100.0" layoutY="57.0" startX="-100.0" stroke="#ae0a0a" />
@@ -67,14 +67,15 @@
             <Line endX="-1.5" endY="300.0" layoutX="720.0" layoutY="77.0" startX="-1.5" startY="-76.0" stroke="#b90909" />
          </children>
       </Pane>
-      <Pane layoutX="-1.0" layoutY="38.0" prefHeight="62.0" prefWidth="800.0">
+      <Pane layoutX="3.0" layoutY="50.0" prefHeight="62.0" prefWidth="800.0">
          <children>
-            <Label layoutX="85.0" layoutY="-3.0" prefHeight="68.0" prefWidth="405.0" text="Phiên dịch" textAlignment="CENTER" textFill="#b90e0e">
+            <Label layoutX="85.0" layoutY="3.0" prefHeight="68.0" prefWidth="405.0" text="Phiên dịch" textAlignment="CENTER" textFill="#b90e0e">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
          </children>
       </Pane>
+      <Button fx:id="returnButton" layoutX="36.0" layoutY="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="35.0" styleClass="button-return" />
     </children>
 </AnchorPane>

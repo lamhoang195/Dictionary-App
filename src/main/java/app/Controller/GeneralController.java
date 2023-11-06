@@ -22,16 +22,12 @@ import java.util.ResourceBundle;
 public class GeneralController implements Initializable {
     @FXML
     private AnchorPane main;
-
     @FXML
     private Button bookmarkButton;
-
     @FXML
     private Button transButton;
-
     @FXML
     private Button searchButton;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -11,18 +11,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.TreeMap;
 
-public class SearchController implements Initializable {
+public class SearchController extends GeneralController implements Initializable {
     private final String PATH = "src/main/resources/data/dictionaries.txt";
+    private final String HISTORY_PATH = "src/main/resources/data/bookmark.txt";
 
     @FXML
     private AnchorPane main;
@@ -33,7 +38,10 @@ public class SearchController implements Initializable {
     @FXML
     private Button returnButton;
     @FXML
-    private Button saveButton;
+    public Button editButton;
+    @FXML
+    public Button deleteButton;
+
     @FXML
     public Label englishWord;
 
@@ -44,21 +52,38 @@ public class SearchController implements Initializable {
     public ListView<String> listWord;
 
     @FXML
+    public Button soundButton;
+
+    @FXML
     private int indexOfWord;
+
+    @FXML
+    private int indexOfWordInList;
 
     @FXML
     private Dictionary dictionary = new Dictionary();
 
     @FXML
+    private Dictionary dictionary1 = new Dictionary();
+
+    @FXML
     private DictionaryManagement management = new DictionaryManagement(dictionary);
 
     @FXML
+    public DictionaryManagement management1 = new DictionaryManagement(dictionary1);
+
+    @FXML
     ObservableList<String> results = FXCollections.observableArrayList();
+
+    @FXML
+    public TreeMap<String, Integer> map = new TreeMap<>();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
         management.insertFromFile(PATH);
+        management1.insertFromFile(HISTORY_PATH);
+        setDefaultListWord();
         searchZone.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
@@ -70,6 +95,7 @@ public class SearchController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 show("/GUI/DictionaryGui.fxml");
+
             }
         });
     }
@@ -97,7 +123,7 @@ public class SearchController implements Initializable {
         String prefix = searchZone.getText();
         management.insertFromFile(PATH);
         management.searchByPrefix(prefix);
-        for(int i = 0;i<Math.min(management.getResult().size(),10);i++) {
+        for(int i = 0;i<Math.min(management.getResult().size(),30);i++) {
             results.add(management.getResult().get(i).getWordTarget());
         }
         if(results.isEmpty()) {
@@ -117,8 +143,79 @@ public class SearchController implements Initializable {
             if(indexOfWord == -1) return;
             englishWord.setText(dictionary.getWord(indexOfWord).getWordTarget());
             explanation.setText(dictionary.getWord(indexOfWord).getWordExplain());
-
+            if(!map.containsKey(englishWord.getText())) {
+                map.put(englishWord.getText(), 1);
+                management1.addWordToHistoryFile(dictionary, englishWord.getText(), explanation.getText());
+            }
+            explanation.setEditable(false);
         }
     }
 
+    @FXML
+    private void handleClickSoundButton() {
+        System.setProperty("freetts.voices","com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+        Voice voice = VoiceManager.getInstance().getVoice("kevin16");
+        if(voice != null) {
+            voice.allocate();
+            voice.speak(dictionary.getWord(indexOfWord).getWordTarget());
+        } else throw new IllegalStateException("Can't find");
+    }
+
+    @FXML
+    private void handleClickEditButton() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Do you want to edit this word?");
+        alert.setContentText("Choose your option");
+
+        ButtonType buttonTypeYes = new ButtonType("Yes",ButtonBar.ButtonData.YES);
+        ButtonType buttonTypeNo = new ButtonType("No",ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+        alert.showAndWait().ifPresent(response ->{
+            if(response == buttonTypeYes) {
+                explanation.setEditable(true);
+            }
+        });
+    }
+
+    @FXML
+    private void handleClickSaveButton() {
+        explanation.setEditable(false);
+        dictionary.getWord(indexOfWord).setWordExplain(explanation.getText());
+    }
+
+    @FXML
+    private void handleClickDeleteButton() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Do you want to delete this word?");
+        alert.setContentText("Choose your option");
+
+        ButtonType buttonTypeYes = new ButtonType("Yes",ButtonBar.ButtonData.YES);
+        ButtonType buttonTypeNo = new ButtonType("No",ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+        alert.showAndWait().ifPresent(response ->{
+            if(response == buttonTypeYes) {
+                englishWord.setText(dictionary.getWord(indexOfWord+1).getWordTarget());
+                explanation.setText(dictionary.getWord(indexOfWord+1).getWordExplain());
+                refreshListWord();
+            }
+        });
+        management.removeWord(dictionary.getWord(indexOfWord).getWordTarget());
+    }
+    private void refreshListWord() {
+        for (int i = 0; i < results.size(); i++)
+            if (results.get(i).equals(dictionary.getWord(indexOfWord).getWordTarget())) {
+                results.remove(i);
+                break;
+            }
+        listWord.setItems(results);
+    }
+
+    private void setDefaultListWord() {
+        for(int i=0; i < 30; i++) {
+            results.add(dictionary.getWord(i).getWordTarget());
+        }
+        listWord.setItems(results);
+    }
 }
