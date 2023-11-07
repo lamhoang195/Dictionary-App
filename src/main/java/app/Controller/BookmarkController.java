@@ -28,8 +28,6 @@ public class BookmarkController implements Initializable {
     @FXML
     public TextField searchZone;
     @FXML
-    private Button returnButton;
-    @FXML
     public Button deleteButton;
 
     @FXML
@@ -69,14 +67,6 @@ public class BookmarkController implements Initializable {
                 handleTypedWord();
             }
         });
-        returnButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                show("/GUI/DictionaryGui.fxml");
-            }
-        });
-
-
     }
 
     @FXML

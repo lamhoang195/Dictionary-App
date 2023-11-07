@@ -31,6 +31,7 @@ public class GeneralController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        show("/GUI/SearcherGui.fxml");
 
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override

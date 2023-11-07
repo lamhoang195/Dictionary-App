@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="main" prefHeight="600.0" prefWidth="817.0" styleClass="third-color" stylesheets="@../style/navigation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.GeneralController">
+<AnchorPane prefHeight="600.0" prefWidth="817.0" styleClass="third-color" stylesheets="@../style/navigation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.GeneralController">
    <children>
       <VBox alignment="CENTER" prefHeight="74.0" prefWidth="57.0">
          <children>
@@ -43,7 +43,7 @@
                   <String fx:value="button-translate" />
                </styleClass>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="57.0" text="Đã lưu" textFill="#47586b">
+            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="57.0" text="Game" textFill="#47586b">
                <font>
                   <Font size="7.0" />
                </font>
@@ -63,5 +63,6 @@
             </Button>
          </children>
       </VBox>
+      <AnchorPane fx:id="main" layoutX="56.0" prefHeight="600.0" prefWidth="762.0" />
    </children>
 </AnchorPane>
