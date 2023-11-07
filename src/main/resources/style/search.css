@@ -173,3 +173,7 @@
 .button-return {
     -fx-graphic: url('../media/normal/returnButton.png');
 }
+
+.button-save1 {
+    -fx-graphic: url('../media/hover/saveButton.png');
+}

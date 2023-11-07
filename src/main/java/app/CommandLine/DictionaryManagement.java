@@ -64,14 +64,26 @@ public class DictionaryManagement extends Dictionary{
      * Export to file.
      *
      */
-    public void exportToFile(Dictionary dictionary) {
+    public void exportToFile(Dictionary dictionary, String path) {
         try {
-            FileWriter fileWriter = new FileWriter("src/main/resources/data/dictionaries_out.txt");
+            FileWriter fileWriter = new FileWriter(path);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Word word : dictionary.getWords()) {
                 bufferedWriter.write(word.getWordTarget() + "\t" + word.getWordExplain());
                 bufferedWriter.newLine();
             }
+            bufferedWriter.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong: " + e);
+        }
+    }
+
+    public void addWordToHistoryFile(Dictionary dictionary, String englishWord, String explanation) {
+        try {
+            FileWriter fileWriter = new FileWriter("src/main/resources/data/bookmark.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(englishWord + "\t" + explanation);
+            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (Exception e) {
             System.out.println("Something went wrong: " + e);
@@ -96,7 +108,7 @@ public class DictionaryManagement extends Dictionary{
             wordMeaning = wordMeaning.toLowerCase();
             Word word = new Word(wordTarget, wordMeaning);
             dictionary.addWord(word);
-            exportToFile(dictionary);
+            exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
         }
     }
 
@@ -107,7 +119,12 @@ public class DictionaryManagement extends Dictionary{
      */
     public void removeWord(String English) {
         dictionary.removeWord(English);
-        exportToFile(dictionary);
+        exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+    }
+
+    public void removeWordInHistory(String English) {
+        dictionary.removeWord(English);
+        exportToFile(dictionary,"src/main/resources/data/bookmark.txt");
     }
 
     /**
@@ -120,7 +137,7 @@ public class DictionaryManagement extends Dictionary{
         wordTarget = wordTarget.toLowerCase();
         wordMeaning = wordMeaning.toLowerCase();
         dictionary.updateWord(wordTarget, wordMeaning);
-        exportToFile(dictionary);
+        exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
     }
 
     /**
