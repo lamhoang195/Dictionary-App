@@ -36,8 +36,6 @@ public class SearchController extends GeneralController implements Initializable
     public TextField searchZone;
 
     @FXML
-    private Button returnButton;
-    @FXML
     public Button editButton;
     @FXML
     public Button deleteButton;
@@ -91,13 +89,7 @@ public class SearchController extends GeneralController implements Initializable
             }
 
         });
-        returnButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                show("/GUI/DictionaryGui.fxml");
 
-            }
-        });
     }
 
     @FXML

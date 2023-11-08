@@ -16,17 +16,10 @@ public class TranslateController implements Initializable {
     @FXML
     private AnchorPane main;
     @FXML
-    public Button returnButton;
-    @FXML
     private Button soundButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        returnButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                show("/GUI/DictionaryGui.fxml");
-            }
-        });
+        //
     }
 
     @FXML

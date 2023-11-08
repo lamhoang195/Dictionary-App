@@ -76,6 +76,5 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="returnButton" layoutX="36.0" layoutY="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="35.0" styleClass="button-return" />
     </children>
 </AnchorPane>

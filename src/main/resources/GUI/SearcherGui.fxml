@@ -68,6 +68,5 @@
             <Button fx:id="saveButton" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleClickSaveButton" prefWidth="3.0" styleClass="button-save1" />
          </children></Pane>
       <Line endX="200.0" fill="#8c1515" layoutX="600.0" layoutY="182.0" startX="-214.0" stroke="#ee2d2d" strokeLineJoin="BEVEL" />
-      <Button fx:id="returnButton" layoutX="29.0" layoutY="20.0" mnemonicParsing="false" prefWidth="10.0" styleClass="button-return" />
    </children>
 </AnchorPane>
