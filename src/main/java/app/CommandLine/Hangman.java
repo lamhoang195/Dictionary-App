@@ -1,6 +1,8 @@
 package app.CommandLine;
 
-public class Hangman {
+import java.util.Scanner;
+
+public class Hangman extends Game{
     private boolean L_hold;
     private boolean hangManHead;
     private boolean hangManBody;
@@ -10,6 +12,7 @@ public class Hangman {
     private boolean hangManLeg2;
 
     public Hangman() {
+        super();
         L_hold = false;
         hangManHead = false;
         hangManBody = false;
@@ -165,4 +168,5 @@ public class Hangman {
         return this.L_hold&&this.hangManHead&&this.hangManArm1 && this.hangManBody
                 &&this.hangManArm2&&this.hangManLeg1&&this.hangManLeg2;
     }
+
 }
