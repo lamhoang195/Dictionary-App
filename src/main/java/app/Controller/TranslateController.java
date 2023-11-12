@@ -1,40 +1,40 @@
 package app.Controller;
 
+import app.CommandLine.Translate;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TextArea;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TranslateController implements Initializable {
+
     @FXML
-    private AnchorPane main;
+    private TextArea inputTextArea;
+
     @FXML
-    private Button soundButton;
+    private TextArea outputTextArea;
+
+    @FXML
+    private Button translateButton;
+
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //
+    public void initialize(URL url, ResourceBundle resources) {
+        translateButton.setOnAction(this::handleTranslateButton);
     }
 
     @FXML
-    private void setChildren(Node node) {
-        main.getChildren().clear();
-        main.getChildren().add(node);
-    }
-
-    @FXML
-    private void show(String path) {
+    private void handleTranslateButton(ActionEvent event) {
+        String textToTranslate = inputTextArea.getText();
         try {
-            AnchorPane children = FXMLLoader.load(getClass().getResource(path));
-            setChildren(children);
+            String translatedText = Translate.translate("en", "vi", textToTranslate);
+            outputTextArea.setText(translatedText);
         } catch (Exception e) {
             e.printStackTrace();
+            // Handle the exception appropriately, e.g., show an error message
         }
     }
 }
