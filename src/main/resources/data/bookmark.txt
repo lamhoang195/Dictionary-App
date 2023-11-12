@@ -14,3 +14,17 @@ abilities	khả năng
 aboriginal	thổ dân
 able	có khả năng
 abandoned	bỏ hoang
+abstract	trừu tượng
+accent	giọng nói
+abandoned	bỏ hoang
+able	có khả năng
+abandoned	bỏ hoang
+ability	khả năng
+abandoned	bỏ hoang
+aboriginal	thổ dân
+abandoned	bỏ hoang
+sex	quan hệ tình dục
+sexually	tình dục
+absorption	sự hấp thụ
+absolutely	hoàn toàn
+abandoned	bỏ hoang

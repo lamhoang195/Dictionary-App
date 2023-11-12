@@ -87,9 +87,7 @@ public class SearchController extends GeneralController implements Initializable
             public void handle(KeyEvent keyEvent) {
                 handleTypedWord();
             }
-
         });
-
     }
 
     @FXML
