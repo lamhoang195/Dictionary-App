@@ -38,3 +38,5 @@ abandoned	bỏ hoang
 fabrics	vải
 fabulous	tuyệt vời
 ability	khả năng
+about	về
+aboriginal	thổ dân
