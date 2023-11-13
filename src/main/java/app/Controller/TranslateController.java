@@ -95,4 +95,5 @@ public class TranslateController implements Initializable {
             voice.speak(outputTextArea.getText());
         } else throw new IllegalStateException("Can't find");
     }
+    //
 }
