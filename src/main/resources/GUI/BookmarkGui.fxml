@@ -30,7 +30,7 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="headText1" layoutX="53.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Kết quả liên quan" textFill="#902929">
+      <Label fx:id="headText1" layoutX="53.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Kết quả liên quan" textFill="#8a1111">
          <font>
             <Font size="10.0" />
          </font>

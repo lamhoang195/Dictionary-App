@@ -59,7 +59,7 @@ public class GeneralController implements Initializable {
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                //
+                show("/GUI/AdditionGui.fxml");
             }
         });
 

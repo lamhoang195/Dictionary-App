@@ -40,3 +40,5 @@ fabulous	tuyệt vời
 ability	khả năng
 about	về
 aboriginal	thổ dân
+faces	khuôn mặt
+aboriginal	thổ dân
