@@ -43,3 +43,4 @@ aboriginal	thổ dân
 faces	khuôn mặt
 aboriginal	thổ dân
 
+able	có khả năng
