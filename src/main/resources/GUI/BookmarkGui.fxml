@@ -30,7 +30,7 @@
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="headText1" layoutX="53.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Kết quả liên quan" textFill="#902929">
+      <Label fx:id="headText1" layoutX="53.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Kết quả liên quan" textFill="#8a1111">
          <font>
             <Font size="10.0" />
          </font>
@@ -65,6 +65,5 @@
          </children>
       </Pane>
       <Line endX="200.0" fill="#8c1515" layoutX="600.0" layoutY="182.0" startX="-214.0" stroke="#ee2d2d" strokeLineJoin="BEVEL" />
-      <Button fx:id="returnButton" layoutX="29.0" layoutY="20.0" mnemonicParsing="false" prefWidth="10.0" styleClass="button-return" />
    </children>
 </AnchorPane>

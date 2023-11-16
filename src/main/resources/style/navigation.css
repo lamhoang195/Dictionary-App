@@ -115,3 +115,7 @@
 .button-setting.active {
     -fx-graphic: url('../media/hover/setting.png');
 }
+
+.button-add {
+    -fx-graphic: url('../media/normal/add-word.png');
+}

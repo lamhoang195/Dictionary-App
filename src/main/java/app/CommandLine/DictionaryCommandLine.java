@@ -91,17 +91,15 @@ public class DictionaryCommandLine {
                     System.out.print("Your choice: ");
                     String option;
                     option = choose.nextLine();
-
                     if (option.equals("C")) {
-                                Game gm = new Game();
-                                Word w = gm.getRandomWord(dictionary);
-                                Hangman hm = new Hangman(w);
-                                hm.play();
-                    }
-                    else {
-                        break;
-                    }
-                    break;
+                        Game gm = new Game();
+                        while (!option.equals("ESC")) {
+                            Game plGame = new Game();
+                            Word targetWord = plGame.getRandomWord(this.dictionary);
+                            plGame.playGame(targetWord);
+                            System.out.println("Type C - Enter to Continue or ESC-Enter to Exit");
+                            option = sc.nextLine();
+                        }
                 case 8:
                     management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
                     System.out.println("Import to file succesfully!");

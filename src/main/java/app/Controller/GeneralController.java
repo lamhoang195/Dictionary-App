@@ -28,9 +28,12 @@ public class GeneralController implements Initializable {
     private Button transButton;
     @FXML
     private Button searchButton;
+    @FXML
+    private Button addButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        show("/GUI/SearcherGui.fxml");
 
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -51,6 +54,12 @@ public class GeneralController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 show("/GUI/TranslationGui.fxml");
+            }
+        });
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/AdditionGui.fxml");
             }
         });
 

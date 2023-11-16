@@ -24,7 +24,7 @@ public class App extends Application {
             }
             primaryStage.setTitle("Dictionary");
             Parent root = FXMLLoader.load(resource);
-            Scene scene = new Scene(root, 800, 600);
+            Scene scene = new Scene(root, 870, 600);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {

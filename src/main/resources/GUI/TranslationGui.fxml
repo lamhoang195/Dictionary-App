@@ -14,16 +14,21 @@
     <children>
       <Pane layoutX="51.0" layoutY="121.0" prefHeight="438.0" prefWidth="714.0" stylesheets="@../style/translate.css">
          <children>
-            <TextArea layoutY="76.0" prefHeight="262.0" prefWidth="350.0" promptText="Type..." wrapText="true">
+            <TextArea fx:id="inputTextArea" layoutY="88.0" prefHeight="262.0" prefWidth="350.0" promptText="Enter text to translate..." wrapText="true">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </TextArea>
-            <TextArea layoutX="369.0" layoutY="76.0" prefHeight="262.0" prefWidth="350.0" />
-            <Button alignment="CENTER" layoutX="329.0" layoutY="390.0" mnemonicParsing="false" styleClass="button-double-arrow" />
+
+            <TextArea fx:id="outputTextArea" layoutX="368.0" layoutY="88.0" prefHeight="262.0" prefWidth="350.0" promptText="Translation will appear here..." wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="translateButton" alignment="CENTER" layoutX="329.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleTranslateButton" styleClass="button-double-arrow" />
             <Pane layoutY="11.0" prefHeight="46.0" prefWidth="689.0">
                <children>
-                  <Label layoutX="121.0" prefHeight="46.0" prefWidth="119.0" text="English" textFill="#b04646">
+                  <Label fx:id="engLabel" layoutX="121.0" prefHeight="46.0" prefWidth="130.0" text="English" textFill="#b04646">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -35,7 +40,7 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <Label layoutX="463.0" layoutY="5.0" prefHeight="37.0" prefWidth="130.0" text="Vietnamese" textFill="#b04653">
+                  <Label fx:id="vieLabel" layoutX="463.0" prefHeight="46.0" prefWidth="130.0" text="Vietnamese" textFill="#b04653">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -47,9 +52,9 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                        <Button layoutX="262.0" layoutY="6.0" mnemonicParsing="false" styleClass="button-speak" />
-                        <Button layoutX="639.0" layoutY="5.0" mnemonicParsing="false" styleClass="button-speak" />
-                  <Button layoutX="334.0" layoutY="5.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="50.0" textFill="WHITE" wrapText="true">
+                        <Button fx:id="soundButton" layoutX="262.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleClickSoundButton1" styleClass="button-speak" />
+                        <Button layoutX="626.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleClickSoundButton2" styleClass="button-speak" />
+                  <Button fx:id="switchButton" layoutX="334.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleClickSwitchButton" prefHeight="33.0" prefWidth="50.0" textFill="WHITE" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -76,6 +81,5 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="returnButton" layoutX="36.0" layoutY="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="35.0" styleClass="button-return" />
     </children>
 </AnchorPane>
