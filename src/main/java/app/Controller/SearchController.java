@@ -79,6 +79,7 @@ public class SearchController extends GeneralController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
+        explanation.setEditable(false);
         management.insertFromFile(PATH);
         management1.insertFromFile(HISTORY_PATH);
         setDefaultListWord();
@@ -137,7 +138,7 @@ public class SearchController extends GeneralController implements Initializable
                 map.put(englishWord.getText(), 1);
                 management1.addWordToHistoryFile(dictionary, englishWord.getText(), explanation.getText());
             }
-            explanation.setEditable(false);
+
         }
     }
 
