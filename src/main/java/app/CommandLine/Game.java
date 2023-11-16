@@ -3,51 +3,30 @@ package app.CommandLine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game {
-    private int turns;
+public class Game{
+    protected Word word;
+    protected int turns;
+    protected int score;
     public Game() {
-        turns = 5;
+        this.score = 0;
     }
-
     public int getTurns() {
         return turns;
     }
     public void setTurns(int turns) {
         this.turns = turns;
     }
-
+    public void setScore(int score) {
+        this.score = score;
+    }
     /**
-     * get random word index from 0 to 100.
+     * get random word index from 0 to 1000.
      *
-     * @param dictionary dictionary
      * @return Word.
      */
     public Word getRandomWord(Dictionary dictionary) {
         Random rand = new Random();
-        int randomIndex = rand.nextInt(101);
+        int randomIndex = rand.nextInt(150);
         return dictionary.getWord(randomIndex);
-    }
-    /**
-     * Rule
-     */
-
-    public void playGame(Word word) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Give meaning of this word in Vietnamese: " + word.getWordTarget());
-        while (this.turns > 0) {
-            System.out.print("Your answer:");
-            String ans = sc.nextLine();
-            if (ans.equals(word.getWordExplain())) {
-                System.out.println("Correct");
-                break;
-            }
-            else {
-                System.out.println("Try again!");
-            }
-            this.turns -= 1;
-        }
-        if (this.turns == 0) {
-            System.out.println("You have no turn left \n The answer is: " + word.getWordExplain());
-        }
     }
 }

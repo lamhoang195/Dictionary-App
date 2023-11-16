@@ -88,7 +88,7 @@ public class DictionaryCommandLine {
                     System.out.println("You have 5 turns to guess the meaning of the word");
                     System.out.println("Type C - Enter to Continue or ESC-Enter to Exit");
                     Scanner choose = new Scanner(System.in);
-                    System.out.println("Your choice: ");
+                    System.out.print("Your choice: ");
                     String option;
                     option = choose.nextLine();
                     if (option.equals("C")) {
@@ -100,12 +100,6 @@ public class DictionaryCommandLine {
                             System.out.println("Type C - Enter to Continue or ESC-Enter to Exit");
                             option = sc.nextLine();
                         }
-
-                    }
-                    else {
-                        break;
-                    }
-                    break;
                 case 8:
                     management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
                     System.out.println("Import to file succesfully!");
