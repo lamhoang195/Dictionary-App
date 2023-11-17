@@ -94,8 +94,8 @@ public class DictionaryCommandLine {
                     if (option.equals("C")) {
                         Game gm = new Game();
                         Word w = gm.getRandomWord(dictionary);
-                        Hangman hm = new Hangman(w);
-                        hm.play();
+                        Game2 gm2 = new Game2(w);
+                        gm2.play();
                     }
                 case 8:
                     management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
