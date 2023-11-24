@@ -62,7 +62,6 @@ public class GeneralController implements Initializable {
                 show("/GUI/AdditionGui.fxml");
             }
         });
-
     }
 
     @FXML
