@@ -5,6 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.web.WebView?>
 <AnchorPane fx:id="main" prefHeight="600.0" prefWidth="800.0" styleClass="second-color" stylesheets="@../style/search.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.SearchController">
    <children>
       <TextField fx:id="searchZone" layoutX="296.0" layoutY="30.0" prefHeight="35.0" prefWidth="219.0" promptText="Tra từ">
@@ -57,6 +58,8 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></TextArea>
+            <WebView fx:id="wExplanation" prefHeight="385.0" prefWidth="406.0">
+               </WebView>
             <Button fx:id="saveButton" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleClickSaveButton" prefWidth="3.0" styleClass="button-save1" />
          </children></Pane>
       <Line endX="200.0" fill="#8c1515" layoutX="600.0" layoutY="182.0" startX="-214.0" stroke="#ee2d2d" strokeLineJoin="BEVEL" />

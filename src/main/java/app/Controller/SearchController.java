@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -76,6 +77,8 @@ public class SearchController extends GeneralController implements Initializable
     @FXML
     public TreeMap<String, Integer> map = new TreeMap<>();
 
+    @FXML
+    private WebView wExplanation;
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
@@ -132,6 +135,11 @@ public class SearchController extends GeneralController implements Initializable
             if(indexOfWord == -1) return;
             englishWord.setText(dictionary.getWord(indexOfWord).getWordTarget());
             explanation.setText(dictionary.getWord(indexOfWord).getWordExplain());
+            String explanationText = "";
+            StringBuilder sb = new StringBuilder(explanationText);
+            sb.append(dictionary.getWord(indexOfWord).getWordExplain());
+            explanationText = sb.toString();
+            wExplanation.getEngine().loadContent(explanationText);
             if(!map.containsKey(englishWord.getText())) {
                 map.put(englishWord.getText(), 1);
                 management1.addWordToHistoryFile(dictionary, englishWord.getText(), explanation.getText());
