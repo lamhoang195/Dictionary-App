@@ -5,7 +5,6 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.web.WebView?>
 <AnchorPane fx:id="main" prefHeight="600.0" prefWidth="800.0" styleClass="second-color" stylesheets="@../style/search.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.SearchController">
    <children>
       <TextField fx:id="searchZone" layoutX="296.0" layoutY="30.0" prefHeight="35.0" prefWidth="219.0" promptText="Tra từ">
@@ -18,7 +17,7 @@
             <ListView fx:id="listWord" onMouseClicked="#handleChooseWord" prefHeight="529.0" prefWidth="236.0" style="-fx-background-color: none;" />
          </children>
       </VBox>
-      <Label fx:id="headText" layoutX="387.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Nghĩa của từ" textFill="#902929">
+      <Label fx:id="headText" layoutX="386.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Nghĩa của từ" textFill="#902929">
          <font>
             <Font size="10.0" />
          </font>
@@ -35,17 +34,17 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="deleteButton" contentDisplay="TOP" layoutX="363.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleClickDeleteButton" prefHeight="52.0" prefWidth="50.0" styleClass="button-remove" textFill="#8e9297">
+            <Button fx:id="deleteButton" contentDisplay="TOP" layoutX="363.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleClickDeleteButton" prefHeight="52.0" prefWidth="50.0" styleClass="button-remove" textFill="#8e9297">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button fx:id="editButton" contentDisplay="TOP" layoutX="318.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleClickEditButton" prefHeight="38.0" prefWidth="41.0" styleClass="button-edit" textFill="#4d99f5">
+            <Button fx:id="editButton" contentDisplay="TOP" layoutX="315.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleClickEditButton" prefHeight="38.0" prefWidth="41.0" styleClass="button-edit" textFill="#4d99f5">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button fx:id="soundButton" layoutX="223.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleClickSoundButton" prefHeight="35.0" prefWidth="35.0" styleClass="button-speak" textFill="#8e9297">
+            <Button fx:id="soundButton" layoutX="236.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleClickSoundButton" prefHeight="35.0" prefWidth="35.0" styleClass="button-speak" textFill="#8e9297">
                <font>
                   <Font size="7.0" />
                </font>
@@ -58,8 +57,6 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></TextArea>
-            <WebView fx:id="wExplanation" prefHeight="385.0" prefWidth="406.0">
-               </WebView>
             <Button fx:id="saveButton" layoutX="192.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleClickSaveButton" prefWidth="3.0" styleClass="button-save1" />
          </children></Pane>
       <Line endX="200.0" fill="#8c1515" layoutX="600.0" layoutY="182.0" startX="-214.0" stroke="#ee2d2d" strokeLineJoin="BEVEL" />

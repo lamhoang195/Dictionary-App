@@ -1,18 +1,4 @@
 @hello
-@helm 
-helm
-- đám mây tụ trên đỉnh núi (lúc có động bão) ((cũng) helm cloud)
-- (từ cổ,nghĩa cổ) (như) helmet
-- tay bánh lái, bánh lái (tàu thuỷ); khoang bánh lái
-=down [with the] helm+ lái con tàu đi theo dưới gió
-=up [with the] helm+ lái con tàu đi theo chiều gió
-- sự chỉ huy, sự điều khiển, sự lânh đạo; chính phủ
-=to take the helm+ nắm quyền chỉ huy, nắm quyền lânh đạo
-=to be at the helm+ cầm lái; đứng mũi chịu sào, ở cương vị chỉ huy
-=the helm of state+ chính phủ
-- lái (con tàu)
-- chỉ huy, dẫn dắt, điều khiển, lânh đạo
-@hello
 /hə'lou/ 
 (halloa) /hə'lou/ 
 (hello) /'he'lou/
@@ -30,7 +16,7 @@ helm
 - kêu "ô này" (tỏ ý ngạc nhiên)
 @hello
 /hə'lou/ 
-(halloa) /hə'lou/ 
+(halloa) /hə'lou/
 (hello) /'he'lou/
 *  thán từ
 - chào anh!, chào chị!
@@ -46,7 +32,7 @@ helm
 - kêu "ô này" (tỏ ý ngạc nhiên)
 @hello
 /hə'lou/ 
-(halloa) /hə'lou/ 
+(halloa) /hə'lou/
 (hello) /'he'lou/
 *  thán từ
 - chào anh!, chào chị!
@@ -60,3 +46,37 @@ helm
 - chào
 - gọi "này, này" 
 - kêu "ô này" (tỏ ý ngạc nhiên)
+@hello
+/hə'lou/ 
+(halloa) /hə'lou/
+(hello) /'he'lou/
+*  thán từ
+- chào anh!, chào chị!
+- này, này
+- ô này! (tỏ ý ngạc nhiên)
+*  danh từ
+- tiếng chào
+- tiếng gọi "này, này" !
+- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
+*  nội động từ
+- chào
+- gọi "này, này" 
+- kêu "ô này" (tỏ ý ngạc nhiên)
+@hello
+/hə'lou/ 
+(halloa) /hə'lou/
+(hello) /'he'lou/
+*  thán từ
+- chào anh!, chào chị!
+- này, này
+- ô này! (tỏ ý ngạc nhiên)
+*  danh từ
+- tiếng chào
+- tiếng gọi "này, này" !
+- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
+*  nội động từ
+- chào
+- gọi "này, này" 
+- kêu "ô này" (tỏ ý ngạc nhiên)
+@sex
+- giống, giới
