@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane fx:id="main" prefHeight="600.0" prefWidth="800.0" styleClass="second-color" stylesheets="@../style/search.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.BookmarkController">
    <children>
@@ -62,6 +63,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </TextArea>
+            <WebView fx:id="wExplanation" prefHeight="385.0" prefWidth="406.0">
+            </WebView>
          </children>
       </Pane>
       <Line endX="200.0" fill="#8c1515" layoutX="600.0" layoutY="182.0" startX="-214.0" stroke="#ee2d2d" strokeLineJoin="BEVEL" />
