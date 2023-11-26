@@ -41,18 +41,23 @@ public class DictionaryManagement extends Dictionary{
         try {
             FileReader fileReader = new FileReader(path);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            while (bufferedReader.ready()) {
-                String lineWord = bufferedReader.readLine();
-                String[] parts = lineWord.split("\t");
-                if (parts.length == 2) {
-                    if (!validWord(parts[0])) {
-                        System.out.println(parts[0] + " is not English Word" + ". Import word to dictionary");
-                    } else {
-                        dictionary.addWord(new Word(parts[0], parts[1]));
+            String englishWord = bufferedReader.readLine();
+            englishWord = englishWord.replace("@", "");
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                Word word = new Word();
+                word.setWordTarget(englishWord.trim());
+                String meaning = line + "\n";
+                while ((line = bufferedReader.readLine()) != null)
+                    if (!line.startsWith("@")) meaning += line + "\n";
+                    else {
+                        englishWord = line.replace("@", "");
+                        break;
                     }
-                }
+                word.setWordExplain(meaning.trim());
+                dictionary.addWord(word);
             }
-            fileReader.close();
+            bufferedReader.close();
         } catch (IOException e) {
             System.out.println("An error occur with file: " + e);
         } catch (Exception e) {
@@ -82,7 +87,9 @@ public class DictionaryManagement extends Dictionary{
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/data/bookmark.txt", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(englishWord + "\t" + explanation);
+            bufferedWriter.write("@" + englishWord); // Thêm dấu "|"
+            bufferedWriter.newLine();
+            bufferedWriter.write(explanation); // Viết giải thích
             bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (Exception e) {
@@ -119,7 +126,7 @@ public class DictionaryManagement extends Dictionary{
      */
     public void removeWord(String English) {
         dictionary.removeWord(English);
-        exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+        exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
     }
 
     public void removeWordInHistory(String English) {
@@ -137,7 +144,7 @@ public class DictionaryManagement extends Dictionary{
         wordTarget = wordTarget.toLowerCase();
         wordMeaning = wordMeaning.toLowerCase();
         dictionary.updateWord(wordTarget, wordMeaning);
-        exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+        exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
     }
 
     /**

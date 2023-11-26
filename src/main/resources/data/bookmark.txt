@@ -1,46 +1,62 @@
-a	một
-abandoned	bỏ hoang
-able	có khả năng
-abs	cơ bụng
-absence	vắng mặt
-accent	giọng nói
-access	truy cập
-abandoned	bỏ hoang
-aboriginal	thổ dân
-abortion	phá thai
-ability	khả năng
-abortion	phá thai
-abilities	khả năng
-aboriginal	thổ dân
-able	có khả năng
-abandoned	bỏ hoang
-abstract	trừu tượng
-accent	giọng nói
-abandoned	bỏ hoang
-able	có khả năng
-abandoned	bỏ hoang
-ability	khả năng
-abandoned	bỏ hoang
-aboriginal	thổ dân
-abandoned	bỏ hoang
-sex	quan hệ tình dục
-sexually	tình dục
-absorption	sự hấp thụ
-absolutely	hoàn toàn
-abandoned	bỏ hoang
-abilities	khả năng
-abandoned	bỏ hoang
-a	một
-abandoned	bỏ hoang
-abortion	phá thai
-abroad	ở nước ngoài
-abandoned	bỏ hoang
-fabrics	vải
-fabulous	tuyệt vời
-ability	khả năng
-about	về
-aboriginal	thổ dân
-faces	khuôn mặt
-aboriginal	thổ dân
-
-able	có khả năng
+@hello
+@helm 
+helm
+- đám mây tụ trên đỉnh núi (lúc có động bão) ((cũng) helm cloud)
+- (từ cổ,nghĩa cổ) (như) helmet
+- tay bánh lái, bánh lái (tàu thuỷ); khoang bánh lái
+=down [with the] helm+ lái con tàu đi theo dưới gió
+=up [with the] helm+ lái con tàu đi theo chiều gió
+- sự chỉ huy, sự điều khiển, sự lânh đạo; chính phủ
+=to take the helm+ nắm quyền chỉ huy, nắm quyền lânh đạo
+=to be at the helm+ cầm lái; đứng mũi chịu sào, ở cương vị chỉ huy
+=the helm of state+ chính phủ
+- lái (con tàu)
+- chỉ huy, dẫn dắt, điều khiển, lânh đạo
+@hello
+/hə'lou/ 
+(halloa) /hə'lou/ 
+(hello) /'he'lou/
+*  thán từ
+- chào anh!, chào chị!
+- này, này
+- ô này! (tỏ ý ngạc nhiên)
+*  danh từ
+- tiếng chào
+- tiếng gọi "này, này" !
+- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
+*  nội động từ
+- chào
+- gọi "này, này" 
+- kêu "ô này" (tỏ ý ngạc nhiên)
+@hello
+/hə'lou/ 
+(halloa) /hə'lou/ 
+(hello) /'he'lou/
+*  thán từ
+- chào anh!, chào chị!
+- này, này
+- ô này! (tỏ ý ngạc nhiên)
+*  danh từ
+- tiếng chào
+- tiếng gọi "này, này" !
+- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
+*  nội động từ
+- chào
+- gọi "này, này" 
+- kêu "ô này" (tỏ ý ngạc nhiên)
+@hello
+/hə'lou/ 
+(halloa) /hə'lou/ 
+(hello) /'he'lou/
+*  thán từ
+- chào anh!, chào chị!
+- này, này
+- ô này! (tỏ ý ngạc nhiên)
+*  danh từ
+- tiếng chào
+- tiếng gọi "này, này" !
+- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
+*  nội động từ
+- chào
+- gọi "này, này" 
+- kêu "ô này" (tỏ ý ngạc nhiên)
