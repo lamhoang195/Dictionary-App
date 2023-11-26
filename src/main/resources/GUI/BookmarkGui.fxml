@@ -18,7 +18,7 @@
             <ListView fx:id="listWord" onMouseClicked="#handleChooseWord" prefHeight="529.0" prefWidth="236.0" style="-fx-background-color: none;" />
          </children>
       </VBox>
-      <Label fx:id="headText" layoutX="387.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Nghĩa của từ" textFill="#902929">
+      <Label fx:id="headText" layoutX="386.0" layoutY="78.0" prefHeight="40.0" prefWidth="390.0" styleClass="title-meaning" text="Nghĩa của từ" textFill="#902929">
          <font>
             <Font size="10.0" />
          </font>
