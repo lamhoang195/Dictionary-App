@@ -37,7 +37,7 @@ public class Word {
      *
      * @param wordTarget       English
      */
-    public void setWord(String wordTarget) {
+    public void setWordTarget(String wordTarget) {
         this.wordTarget = wordTarget;
     }
 

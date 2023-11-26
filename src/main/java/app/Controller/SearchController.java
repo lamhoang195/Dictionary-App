@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 import java.util.TreeMap;
 
 public class SearchController extends GeneralController implements Initializable {
-    private final String PATH = "src/main/resources/data/dictionaries.txt";
+    private final String PATH = "src/main/resources/data/anhviet109K.txt";
     private final String HISTORY_PATH = "src/main/resources/data/bookmark.txt";
 
     @FXML
@@ -112,7 +112,6 @@ public class SearchController extends GeneralController implements Initializable
         results.clear();
         management.getResult().clear();
         String prefix = searchZone.getText();
-        management.insertFromFile(PATH);
         management.searchByPrefix(prefix);
         for(int i = 0;i<Math.min(management.getResult().size(),30);i++) {
             results.add(management.getResult().get(i).getWordTarget());
@@ -128,7 +127,6 @@ public class SearchController extends GeneralController implements Initializable
     @FXML
     private void handleChooseWord(MouseEvent mouseEvent) {
         String selectedWord = listWord.getSelectionModel().getSelectedItem();
-        management.insertFromFile(PATH);
         if(selectedWord != null) {
             indexOfWord = dictionary.binarySearchWord(selectedWord);
             if(indexOfWord == -1) return;
