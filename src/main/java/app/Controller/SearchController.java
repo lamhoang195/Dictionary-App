@@ -18,15 +18,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.TreeMap;
+import java.util.*;
 
 public class SearchController extends GeneralController implements Initializable {
-    private final String PATH = "src/main/resources/data/anhviet109K.txt";
+    private final String PATH = "src/main/resources/data/dictionaries.txt";
     private final String HISTORY_PATH = "src/main/resources/data/bookmark.txt";
 
     @FXML
@@ -76,6 +74,8 @@ public class SearchController extends GeneralController implements Initializable
     @FXML
     public TreeMap<String, Integer> map = new TreeMap<>();
 
+    @FXML
+    private WebView wExplanation;
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
@@ -109,34 +109,33 @@ public class SearchController extends GeneralController implements Initializable
 
     @FXML
     private void handleTypedWord() {
-        results.clear();
-        management.getResult().clear();
-        String prefix = searchZone.getText();
-        management.searchByPrefix(prefix);
-        for(int i = 0;i<Math.min(management.getResult().size(),30);i++) {
-            results.add(management.getResult().get(i).getWordTarget());
-        }
-        if(results.isEmpty()) {
-            System.out.println("No problem");
-        }
-        else {
+        String s = searchZone.getText();
+        ArrayList<String> suggestions = dictionary.searcher(s, false);
+        if (suggestions.isEmpty()) {
+            results.clear();
+        } else {
+            results = FXCollections.observableArrayList();
+            results.addAll(suggestions);
             listWord.setItems(results);
         }
     }
 
     @FXML
     private void handleChooseWord(MouseEvent mouseEvent) {
-        String selectedWord = listWord.getSelectionModel().getSelectedItem();
-        if(selectedWord != null) {
-            indexOfWord = dictionary.binarySearchWord(selectedWord);
-            if(indexOfWord == -1) return;
-            englishWord.setText(dictionary.getWord(indexOfWord).getWordTarget());
-            explanation.setText(dictionary.getWord(indexOfWord).getWordExplain());
-            if(!map.containsKey(englishWord.getText())) {
-                map.put(englishWord.getText(), 1);
-                management1.addWordToHistoryFile(dictionary, englishWord.getText(), explanation.getText());
+        try {
+            if (!results.isEmpty()) {
+                String s = listWord.getSelectionModel().getSelectedItem();
+                indexOfWord = dictionary.binarySearchWord(s);
+                englishWord.setText(s);
+                explanation.setText(dictionary.lookupWord(s));
+                loadWebView(wExplanation, dictionary.lookupWord(s));
+                if(!map.containsKey(englishWord.getText())) {
+                    map.put(englishWord.getText(), 1);
+                    management1.addWordToHistoryFile(dictionary, englishWord.getText(), explanation.getText());
+                }
             }
-
+        } catch (NullPointerException e) {
+            e.getMessage();
         }
     }
 
@@ -146,7 +145,7 @@ public class SearchController extends GeneralController implements Initializable
         Voice voice = VoiceManager.getInstance().getVoice("kevin16");
         if(voice != null) {
             voice.allocate();
-            voice.speak(dictionary.getWord(indexOfWord).getWordTarget());
+            voice.speak(englishWord.getText());
         } else throw new IllegalStateException("Can't find");
     }
 
@@ -163,14 +162,14 @@ public class SearchController extends GeneralController implements Initializable
         alert.showAndWait().ifPresent(response ->{
             if(response == buttonTypeYes) {
                 explanation.setEditable(true);
+                TextInputDialog tiDialog = new TextInputDialog();
+                tiDialog.setTitle("Edit");
+                tiDialog.setHeaderText("Enter new meaning for " + englishWord.getText() + ":");
+                Optional<String> result = tiDialog.showAndWait();
+                result.ifPresent(s -> management.updateWord(englishWord.getText(), s));
+                loadWebView(wExplanation, dictionary.lookupWord(englishWord.getText()));
             }
         });
-    }
-
-    @FXML
-    private void handleClickSaveButton() {
-        explanation.setEditable(false);
-        dictionary.getWord(indexOfWord).setWordExplain(explanation.getText());
     }
 
     @FXML
@@ -187,11 +186,17 @@ public class SearchController extends GeneralController implements Initializable
             if(response == buttonTypeYes) {
                 englishWord.setText(dictionary.getWord(indexOfWord+1).getWordTarget());
                 explanation.setText(dictionary.getWord(indexOfWord+1).getWordExplain());
+                loadWebView(wExplanation, dictionary.getWord(indexOfWord+1).getWordExplain());
                 refreshListWord();
             }
         });
         management.removeWord(dictionary.getWord(indexOfWord).getWordTarget());
     }
+
+    private void loadWebView(WebView webView, String text) {
+        webView.getEngine().loadContent(text);
+    }
+
     private void refreshListWord() {
         for (int i = 0; i < results.size(); i++)
             if (results.get(i).equals(dictionary.getWord(indexOfWord).getWordTarget())) {
@@ -202,9 +207,8 @@ public class SearchController extends GeneralController implements Initializable
     }
 
     private void setDefaultListWord() {
-        for(int i=0; i < 30; i++) {
-            results.add(dictionary.getWord(i).getWordTarget());
-        }
+        ArrayList<String> keys = dictionary.searcher("", true);
+        results.addAll(keys);
         listWord.setItems(results);
     }
 }

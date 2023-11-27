@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -56,6 +57,8 @@ public class BookmarkController implements Initializable {
 
     @FXML
     ObservableList<String> results = FXCollections.observableArrayList();
+    @FXML
+    private WebView wExplanation;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -111,6 +114,7 @@ public class BookmarkController implements Initializable {
             if (indexOfWord == -1) return;
             englishWord.setText(dictionary.getWord(indexOfWord).getWordTarget());
             explanation.setText(dictionary.getWord(indexOfWord).getWordExplain());
+            wExplanation.getEngine().loadContent(dictionary.getWord(indexOfWord).getWordExplain());
             explanation.setEditable(false);
         }
     }
@@ -139,6 +143,7 @@ public class BookmarkController implements Initializable {
             if(response == buttonTypeYes) {
                 englishWord.setText(dictionary.getWord(indexOfWord+1).getWordTarget());
                 explanation.setText(dictionary.getWord(indexOfWord+1).getWordExplain());
+                wExplanation.getEngine().loadContent(dictionary.getWord(indexOfWord+1).getWordExplain());
                 refreshListWord();
             }
         });
@@ -162,4 +167,5 @@ public class BookmarkController implements Initializable {
     }
 
 }
+
 

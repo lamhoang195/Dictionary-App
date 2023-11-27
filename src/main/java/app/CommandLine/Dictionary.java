@@ -9,9 +9,11 @@ import java.util.List;
 
 public class Dictionary {
     private ArrayList<Word> wordList = new ArrayList<>();
+    private Trie storeTargetWord;
 
     public Dictionary() {
         this.wordList = new ArrayList<>();
+        this.storeTargetWord = new Trie();
     }
 
     /**
@@ -49,10 +51,10 @@ public class Dictionary {
      * @param word new word
      */
     public void addWord(Word word) {
-        int length = wordList.size();
-        int index = searchIndexInsert(0, length - 1, word.getWordTarget());
-        if (index <= length && index >= 0) {
-            wordList.add(index, word);
+        int check = storeTargetWord.search(word.getWordTarget());
+        if (check == -1) {
+            wordList.add(word);
+            storeTargetWord.insert(word.getWordTarget(), wordList.size() - 1);
         } else {
             System.out.println("The word already exists");
         }
@@ -64,9 +66,9 @@ public class Dictionary {
      * @param wordTarget E word
      */
     public void removeWord(String wordTarget) {
-        int index = binarySearchWord(wordTarget);
-        if (index >= 0) {
-            wordList.remove(index);
+        int check = storeTargetWord.remove(wordTarget);
+        if (check != -1) {
+            wordList.remove(check);
             System.out.println("Remove successfully!");
         } else {
             System.out.println("Word not found, no word removed.");
@@ -80,14 +82,10 @@ public class Dictionary {
      * @param updateWordExplain word meaning
      */
     public void updateWord(String wordTarget, String updateWordExplain) {
-        for (Word word : wordList) {
-            if (word.getWordTarget().equals(wordTarget)) {
-                word.setWordExplain(updateWordExplain);
-                System.out.println("Update successfully!");
-                return;
-            }
-        }
-        System.out.println("Word not found, update word failed!");
+        removeWord(wordTarget);
+        addWord(new Word(wordTarget, updateWordExplain));
+        // System.out.println("Update successfully!");
+        // System.out.println("Word not found, update word failed!");
     }
 
     /**
@@ -140,11 +138,12 @@ public class Dictionary {
      * @return mean in Vietnamese
      */
     public String lookupWord(String wordTarget) {
-        int index = binarySearchWord(wordTarget);
-        if (index >= 0) {
-            return "Work Explain: " + wordList.get(index).getWordExplain();
+        int check = storeTargetWord.search(wordTarget);
+        if (check == -1) {
+            return null;
+        } else {
+            return wordList.get(check).getWordExplain();
         }
-        return "Work not found, lookup word failed!";
     }
 
 
@@ -155,6 +154,15 @@ public class Dictionary {
      */
     public Word getWord(int index) {
         return wordList.get(index);
+    }
+
+    public ArrayList<String> searcher(String s, boolean permission) {
+        ArrayList<String> suggestions = storeTargetWord.suggestion(s, permission);
+        int selfCheck = storeTargetWord.search(s);
+        if (selfCheck != -1) {
+            suggestions.add(s);
+        }
+        return suggestions;
     }
 }
 
