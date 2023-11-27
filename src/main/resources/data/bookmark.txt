@@ -1,82 +1,27 @@
-@hello
-/hə'lou/ 
-(halloa) /hə'lou/ 
-(hello) /'he'lou/
-*  thán từ
-- chào anh!, chào chị!
-- này, này
-- ô này! (tỏ ý ngạc nhiên)
-*  danh từ
-- tiếng chào
-- tiếng gọi "này, này" !
-- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
-*  nội động từ
-- chào
-- gọi "này, này" 
-- kêu "ô này" (tỏ ý ngạc nhiên)
-@hello
-/hə'lou/ 
-(halloa) /hə'lou/
-(hello) /'he'lou/
-*  thán từ
-- chào anh!, chào chị!
-- này, này
-- ô này! (tỏ ý ngạc nhiên)
-*  danh từ
-- tiếng chào
-- tiếng gọi "này, này" !
-- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
-*  nội động từ
-- chào
-- gọi "này, này" 
-- kêu "ô này" (tỏ ý ngạc nhiên)
-@hello
-/hə'lou/ 
-(halloa) /hə'lou/
-(hello) /'he'lou/
-*  thán từ
-- chào anh!, chào chị!
-- này, này
-- ô này! (tỏ ý ngạc nhiên)
-*  danh từ
-- tiếng chào
-- tiếng gọi "này, này" !
-- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
-*  nội động từ
-- chào
-- gọi "này, này" 
-- kêu "ô này" (tỏ ý ngạc nhiên)
-@hello
-/hə'lou/ 
-(halloa) /hə'lou/
-(hello) /'he'lou/
-*  thán từ
-- chào anh!, chào chị!
-- này, này
-- ô này! (tỏ ý ngạc nhiên)
-*  danh từ
-- tiếng chào
-- tiếng gọi "này, này" !
-- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
-*  nội động từ
-- chào
-- gọi "này, này" 
-- kêu "ô này" (tỏ ý ngạc nhiên)
-@hello
-/hə'lou/ 
-(halloa) /hə'lou/
-(hello) /'he'lou/
-*  thán từ
-- chào anh!, chào chị!
-- này, này
-- ô này! (tỏ ý ngạc nhiên)
-*  danh từ
-- tiếng chào
-- tiếng gọi "này, này" !
-- tiếng kêu ô này "! (tỏ ý ngạc nhiên)
-*  nội động từ
-- chào
-- gọi "này, này" 
-- kêu "ô này" (tỏ ý ngạc nhiên)
-@sex
-- giống, giới
+hello	<html><i>hello /hə'lou/ (halloa) /hə'lou/ (hello) /'he'lou/</i><br/><ul><li><b><i> thán từ</i></b><ul><li><font color='#cc0000'><b> chào anh!, chào chị!</b></font></li></ul><ul><li><font color='#cc0000'><b> này, này</b></font></li></ul><ul><li><font color='#cc0000'><b> ô này! (tỏ ý ngạc nhiên)</b></font><ul></li></ul></ul></li></ul><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> tiếng chào</b></font></li></ul><ul><li><font color='#cc0000'><b> tiếng gọi "này, này" !</b></font></li></ul><ul><li><font color='#cc0000'><b> tiếng kêu ô này "! (tỏ ý ngạc nhiên)</b></font><ul></li></ul></ul></li></ul><ul><li><b><i> nội động từ</i></b><ul><li><font color='#cc0000'><b> chào</b></font></li></ul><ul><li><font color='#cc0000'><b> gọi "này, này"</b></font></li></ul><ul><li><font color='#cc0000'><b> kêu "ô này" (tỏ ý ngạc nhiên)</b></font></li></ul></li></ul></html>
+aa	hội
+aaa	<html><i>aaa</i><br/><ul><li><font color='#cc0000'><b> (amateur athletic association) hội thể thao không chuyên</b></font></li></ul><ul><li><font color='#cc0000'><b> (american automobile association) hiệp hội xe hơi mỹ</b></font></li></ul></html>
+aardwolf	<html><i>aardwolf</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> <động> chó sói đất (nam phi)</b></font></li></ul></li></ul></html>
+ab	<html><i>aba /'ɑ:bə/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> áo aba (áo ngoài giống hình cái túi người a-rập)</b></font></li></ul></li></ul></html>
+abaca	<html><i>abacist</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> người gãy bàn phím</b></font></li></ul><ul><li><font color='#cc0000'><b> người kế toán</b></font></li></ul></li></ul></html>
+aba	<html><i>abaci /'æbəkəs/</i><br/><ul><li><b><i> danh từ, số nhiều abaci, abacuses</i></b><ul><li><font color='#cc0000'><b> bàn tính</b></font><ul><li><b>to move counters of an abacus; to work an abacus</b>: tính bằng bàn tính, gảy bàn tính</li></ul></li></ul><ul><li><font color='#cc0000'><b> (kiến trúc)</b></font></li></ul><ul><li><font color='#cc0000'><b> đầu cột, đỉnh cột</b></font></li></ul></li></ul></html>
+aasvogel	<html><i>ab</i><br/><ul><li><font color='#cc0000'><b> (vt của able-bodied seaman) thủy thủ hạng nhất</b></font></li></ul><ul><li><font color='#cc0000'><b> (vt của bachelor of arts) cử nhân văn chương</b></font></li></ul></html>
+aasmus	<html><i>aasvogel /'ɑ:sfougəl/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (động vật học) con kên kên (nam phi)</b></font></li></ul></li></ul></html>
+aardwolves	<html><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (y học) bệnh hen</b></font></li></ul></li></ul></html>
+aback	<html><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (y học) sự phá thai</b></font></li></ul></li></ul></html>
+abalienated	<html><i>abalienate</i><br/><ul><li><b><i> ngoại động từ</i></b><ul><li><font color='#cc0000'><b> nhường lại tài sản</b></font></li></ul></li></ul></html>
+abaci	<html><i>abaci /'æbəkəs/</i><br/><ul><li><b><i> danh từ, số nhiều abaci, abacuses</i></b><ul><li><font color='#cc0000'><b> bàn tính</b></font><ul><li><b>to move counters of an abacus; to work an abacus</b>: tính bằng bàn tính, gảy bàn tính</li></ul></li></ul><ul><li><font color='#cc0000'><b> (kiến trúc)</b></font></li></ul><ul><li><font color='#cc0000'><b> đầu cột, đỉnh cột</b></font></li></ul></li></ul></html>
+hello	<html><i>hello /hə'lou/ (halloa) /hə'lou/ (hello) /'he'lou/</i><br/><ul><li><b><i> thán từ</i></b><ul><li><font color='#cc0000'><b> chào anh!, chào chị!</b></font></li></ul><ul><li><font color='#cc0000'><b> này, này</b></font></li></ul><ul><li><font color='#cc0000'><b> ô này! (tỏ ý ngạc nhiên)</b></font><ul></li></ul></ul></li></ul><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> tiếng chào</b></font></li></ul><ul><li><font color='#cc0000'><b> tiếng gọi "này, này" !</b></font></li></ul><ul><li><font color='#cc0000'><b> tiếng kêu ô này "! (tỏ ý ngạc nhiên)</b></font><ul></li></ul></ul></li></ul><ul><li><b><i> nội động từ</i></b><ul><li><font color='#cc0000'><b> chào</b></font></li></ul><ul><li><font color='#cc0000'><b> gọi "này, này"</b></font></li></ul><ul><li><font color='#cc0000'><b> kêu "ô này" (tỏ ý ngạc nhiên)</b></font></li></ul></li></ul></html>
+hellos	<html><i>hello /hə'lou/ (halloa) /hə'lou/ (hello) /'he'lou/</i><br/><ul><li><b><i> thán từ</i></b><ul><li><font color='#cc0000'><b> chào anh!, chào chị!</b></font></li></ul><ul><li><font color='#cc0000'><b> này, này</b></font></li></ul><ul><li><font color='#cc0000'><b> ô này! (tỏ ý ngạc nhiên)</b></font><ul></li></ul></ul></li></ul><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> tiếng chào</b></font></li></ul><ul><li><font color='#cc0000'><b> tiếng gọi "này, này" !</b></font></li></ul><ul><li><font color='#cc0000'><b> tiếng kêu ô này "! (tỏ ý ngạc nhiên)</b></font><ul></li></ul></ul></li></ul><ul><li><b><i> nội động từ</i></b><ul><li><font color='#cc0000'><b> chào</b></font></li></ul><ul><li><font color='#cc0000'><b> gọi "này, này"</b></font></li></ul><ul><li><font color='#cc0000'><b> kêu "ô này" (tỏ ý ngạc nhiên)</b></font></li></ul></li></ul></html>
+populi	<html><i>populi /vɔks/</i><br/><ul><li><b><i> danh từ (số nhiều voces)</i></b><ul><li><font color='#cc0000'><b> tiếng</b></font><ul><li><b>vox populi</b>: tiếng nói của nhân dân, dư luận quần chúng</li></ul></li></ul></li></ul></html>
+aaa	<html><i>aaa</i><br/><ul><li><font color='#cc0000'><b> (amateur athletic association) hội thể thao không chuyên</b></font></li></ul><ul><li><font color='#cc0000'><b> (american automobile association) hiệp hội xe hơi mỹ</b></font></li></ul></html>
+aasvogel	<html><i>aasvogel /'ɑ:sfougəl/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (động vật học) con kên kên (nam phi)</b></font></li></ul></li></ul></html>
+aasvogel	<html><i>aasvogel /'ɑ:sfougəl/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (động vật học) con kên kên (nam phi)</b></font></li></ul></li></ul></html>
+aasvogel	<html><i>aasvogel /'ɑ:sfougəl/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (động vật học) con kên kên (nam phi)</b></font></li></ul></li></ul></html>
+dabber	<html><i>dabber /'dæbə/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> người đánh nhẹ, người vỗ nhẹ, người xoa nhẹ</b></font></li></ul><ul><li><font color='#cc0000'><b> người chấm nhẹ, người thấm nhẹ</b></font></li></ul><ul><li><font color='#cc0000'><b> nùi vải, nùi bông, miếng bọt biển (để chấm, thấm...)</b></font></li></ul><ul><li><font color='#cc0000'><b> (ngành in) trục lăn mực (lên bản in)</b></font></li></ul></li></ul></html>
+áaardvark	<html><i>aardvark</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (động vật) lợn đất</b></font></li></ul></li></ul></html>
+áa	<html><i>a /ei, ə/</i><br/><ul><li><b><i> danh từ, số nhiều as, a's</i></b><ul><li><font color='#cc0000'><b> (thông tục) loại a, hạng nhất, hạng tốt nhất hạng rất tốt</b></font><ul><li><b>his health is a</b>: sức khoẻ anh ta vào loại a</li></ul></li></ul><ul><li><font color='#cc0000'><b> (âm nhạc) la</b></font><ul><li><b>a sharp</b>: la thăng</li><li><b>a flat</b>: la giáng</li></ul></li></ul><ul><li><font color='#cc0000'><b> người giả định thứ nhất; trường hợp giả định thứ nhất</b></font><ul><li><b>from a to z</b>: từ đầu đến đuôi, tường tận</li><li><b>not to know a from b</b>: không biết tí gì cả; một chữ bẻ đôi cũng không biết</li></li></ul></ul></li></ul><ul><li><b><i> mạo từ</i></b><ul><li><font color='#cc0000'><b> một; một (như kiểu); một (nào đó)</b></font><ul><li><b>a very cold day</b>: một ngày rất lạnh</li><li><b>a dozen</b>: một tá</li><li><b>a few</b>: một ít</li><li><b>all of a size</b>: tất cả cùng một cỡ</li><li><b>a shakespeare</b>: một (văn hào như kiểu) sếch-xpia</li><li><b>a mr nam</b>: một ông nam (nào đó)</li></ul></li></ul><ul><li><font color='#cc0000'><b> cái, con, chiếc, cuốn, người, đứa...;</b></font><ul><li><b>a cup</b>: cái chén</li><li><b>a knife</b>: con dao</li><li><b>a son of the party</b>: người con của đảng</li><li><b>a vietnamese grammar</b>: cuốn ngữ pháp việt nam</li></li></ul></ul></li></ul><ul><li><b><i> giới từ</i></b><ul><li><font color='#cc0000'><b> mỗi, mỗi một</b></font><ul><li><b>twice a week</b>: mỗi tuần hai lần</li></ul></li></ul></li></ul></html>
+áabas	<html><i>aba /'ɑ:bə/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> áo aba (áo ngoài giống hình cái túi người a-rập)</b></font></li></ul></li></ul></html>
+ahead	<html><i>ahead /ə'hed/</i><br/><ul><li><b><i> phó từ</i></b><ul><li><font color='#cc0000'><b> trước, về phía trước, ở thẳng phía trước; nhanh về phía trước, lên trước</b></font><ul><li><b>ahead of time</b>: trước thời hạn</li><li><b>obstacles ahead</b>: vật chướng ngại ở phía trước</li><li><b>go ahead!</b>: đi lên!, tiến lên!, cứ tiếp tục đi!</li><li><b>to look ahead</b>: nhìn trước, lo xa</li></li></ul></ul></li></ul><ul><li><b><i> tính từ</i></b><ul><li><font color='#cc0000'><b> hơn, vượt</b></font><ul><li><b>to be (get) ahead of</b>: hơn (ai), vượt (ai)</li></ul></li></ul><ul><li><font color='#cc0000'><b><i>to be ahead</i></b></font><ul><li><b> (từ mỹ,nghĩa mỹ), (thông tục) ở thế lợi</b></li></ul></li></ul></li></ul></html>
+getaways	<html><i>getaway /'getəwei/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (thông tục) sự chạy trốn, sự trốn thoát (kẻ trộm)</b></font><ul><li><b>to make a getaway</b>: chạy trốn, trốn thoát</li></ul></li></ul><ul><li><font color='#cc0000'><b> sự mở máy chạy (ô tô)</b></font></li></ul></li></ul></html>
+getaway	<html><i>getaway /'getəwei/</i><br/><ul><li><b><i> danh từ</i></b><ul><li><font color='#cc0000'><b> (thông tục) sự chạy trốn, sự trốn thoát (kẻ trộm)</b></font><ul><li><b>to make a getaway</b>: chạy trốn, trốn thoát</li></ul></li></ul><ul><li><font color='#cc0000'><b> sự mở máy chạy (ô tô)</b></font></li></ul></li></ul></html>

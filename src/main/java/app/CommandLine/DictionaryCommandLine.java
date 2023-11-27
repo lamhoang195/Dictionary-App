@@ -31,7 +31,7 @@ public class DictionaryCommandLine {
     public void displayAdvance() {
         DictionaryManagement management = new DictionaryManagement(dictionary);
         Scanner sc = new Scanner(System.in);
-        management.insertFromFile("src/main/resources/data/dictionaries.txt");
+        management.insertFromFile("src/main/resources/data/dictionaries_target_tab_explain.txt");
         System.out.println("Welcome to My Application!");
         while (true) {
             System.out.println("[0] Exit");
@@ -98,11 +98,11 @@ public class DictionaryCommandLine {
                         hm.play();
                     }
                 case 8:
-                    management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
                     System.out.println("Import to file succesfully!");
                     break;
                 case 9:
-                    management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
                     System.out.println("Export to file succesfully!");
                     break;
                 case 10:

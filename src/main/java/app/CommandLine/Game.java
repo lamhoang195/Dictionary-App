@@ -3,12 +3,16 @@ package app.CommandLine;
 import java.util.Random;
 import java.util.Scanner;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Game{
     protected Word word;
     protected int turns;
     protected int score;
     public Game() {
         this.score = 0;
+        this.turns = 5;
     }
     public int getTurns() {
         return turns;
@@ -28,5 +32,23 @@ public class Game{
         Random rand = new Random();
         int randomIndex = rand.nextInt(150);
         return dictionary.getWord(randomIndex);
+    }
+
+    public void play() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println( "Give the word which mean: " + this.word.getWordExplain());
+        while (this.turns > 0) {
+            System.out.print("Your answer: ");
+            String ans = sc.nextLine();
+            if (ans.equals(this.word.getWordTarget())) {
+                System.out.println("Correct!");
+                break;
+            }
+            else {
+                this.turns --;
+                System.out.println("Try again!");
+            }
+        }
+        if (this.turns == 0) System.out.println("You lose! The correct answer is: " + this.word.getWordTarget());
     }
 }
