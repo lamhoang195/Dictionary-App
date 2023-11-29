@@ -170,6 +170,4 @@ public class DictionaryManagement extends Dictionary{
             System.out.println("No found prefix word!");
         }
     }
-
-
 }
