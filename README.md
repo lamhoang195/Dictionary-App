@@ -8,12 +8,13 @@ In addition, users can learn and play small games to remember words better.
 
 ## 2. Authors
 
-| Student ID | Full Name        | GitHub Profile                    |
-|:----------:|:-----------------|:----------------------------------|
-|  22028150  | Lê Bá Hoàng      | <https://github.com/lamhoang195>  |
-|  22028246  | Nguyễn Mạnh Hùng | <https://github.com/nmhung1294>   |
-|  22028187  | Trần Bình Minh   | <https://github.com/tbmk67uet>    |
-|  22028218  | Phạm Tuấn Đạt    | <https://github.com/ptdat46>      |
+| Student ID | Full Name        | GitHub Profile                           |
+|:----------:|:-----------------|:-----------------------------------------|
+|  22028150  | Lê Bá Hoàng      | <https://github.com/lamhoang195>         |
+|  22028246  | Nguyễn Mạnh Hùng | <https://github.com/nmhung1294>          |
+|  22028187  | Trần Bình Minh   | <https://github.com/tbmk67uet>           |
+|  22028218  | Phạm Tuấn Đạt    | <https://github.com/ptdat46>             |
+|  22028158  | Hồ Văn Tiến Mạnh | <https://github.com/ManhblueCW>          |
 
 ## 3. Function
 
