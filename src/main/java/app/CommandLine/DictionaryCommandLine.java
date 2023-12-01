@@ -60,7 +60,7 @@ public class DictionaryCommandLine {
                     System.out.print("Enter a word to remove: ");
                     String wordToRemove = sc.nextLine();
                     wordToRemove = wordToRemove.trim().toLowerCase();
-                    management.removeWord(wordToRemove);
+                    management.removeWordCMD(wordToRemove);
                     break;
                 case 3:
                     System.out.print("Enter a word to update: ");
@@ -69,7 +69,7 @@ public class DictionaryCommandLine {
                     String wordTarget = sc.nextLine();
                     System.out.print("Vietnamese: ");
                     String updatedWordExplain = sc.nextLine();
-                    management.updateWord(wordTarget, updatedWordExplain);
+                    management.updateWordCMD(wordTarget, updatedWordExplain);
                     break;
                 case 4:
                     showAllWords();
@@ -96,11 +96,11 @@ public class DictionaryCommandLine {
                         hangmanGame.play();
                     }
                 case 8:
-                    management.exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/new.txt");
                     System.out.println("Import to file succesfully!");
                     break;
                 case 9:
-                    management.exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/new.txt");
                     System.out.println("Export to file succesfully!");
                     break;
                 case 10:
