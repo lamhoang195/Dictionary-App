@@ -45,3 +45,4 @@ aboriginal	thổ dân
 
 able	có khả năng
 abilities	khả năng
+hello	xin chào
