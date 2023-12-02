@@ -60,7 +60,7 @@ public class DictionaryCommandLine {
                     System.out.print("Enter a word to remove: ");
                     String wordToRemove = sc.nextLine();
                     wordToRemove = wordToRemove.trim().toLowerCase();
-                    management.removeWord(wordToRemove);
+                    management.removeWordCMD(wordToRemove);
                     break;
                 case 3:
                     System.out.print("Enter a word to update: ");
@@ -69,7 +69,7 @@ public class DictionaryCommandLine {
                     String wordTarget = sc.nextLine();
                     System.out.print("Vietnamese: ");
                     String updatedWordExplain = sc.nextLine();
-                    management.updateWord(wordTarget, updatedWordExplain);
+                    management.updateWordCMD(wordTarget, updatedWordExplain);
                     break;
                 case 4:
                     showAllWords();
@@ -77,6 +77,7 @@ public class DictionaryCommandLine {
                 case 5:
                     System.out.print("Enter a word to lookup: ");
                     String wordSearch = sc.nextLine();
+                    System.out.print("Word Explain: ");
                     System.out.println(management.dictionaryLookup(wordSearch));
                     break;
                 case 6:
@@ -85,24 +86,21 @@ public class DictionaryCommandLine {
                     management.searchByPrefix(searchPrefix);
                     break;
                 case 7:
-                    System.out.println("You have 5 turns to guess the meaning of the word");
                     System.out.println("Type C - Enter to Continue or ESC-Enter to Exit");
                     Scanner choose = new Scanner(System.in);
                     System.out.print("Your choice: ");
                     String option;
                     option = choose.nextLine();
                     if (option.equals("C")) {
-                        Game gm = new Game();
-                        Word w = gm.getRandomWord(dictionary);
-                        Hangman hm = new Hangman(w);
-                        hm.play();
+                        Hangman hangmanGame = new Hangman(dictionary);
+                        hangmanGame.play();
                     }
                 case 8:
-                    management.exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/new.txt");
                     System.out.println("Import to file succesfully!");
                     break;
                 case 9:
-                    management.exportToFile(dictionary,"src/main/resources/data/anhviet109K.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/new.txt");
                     System.out.println("Export to file succesfully!");
                     break;
                 case 10:

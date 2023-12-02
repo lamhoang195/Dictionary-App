@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane fx:id="main" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.AdditionController">
    <children>
       <Label layoutX="77.0" layoutY="107.0" prefHeight="31.0" prefWidth="156.0" text="Từ Tiếng Anh">
@@ -13,7 +14,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="77.0" layoutY="170.0" prefHeight="40.0" prefWidth="190.0" promptText="Nhập từ Tiếng Anh">
+      <TextField fx:id="englishTextField" layoutX="77.0" layoutY="170.0" prefHeight="40.0" prefWidth="190.0" promptText="Nhập từ Tiếng Anh">
          <font>
             <Font size="14.0" />
          </font>
@@ -23,11 +24,11 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField alignment="TOP_LEFT" layoutX="77.0" layoutY="329.0" prefHeight="140.0" prefWidth="660.0" promptText="Nhập nghĩa của từ">
+      <TextField fx:id="vietnameseTextField" layoutX="77.0" layoutY="329.0" prefHeight="140.0" prefWidth="660.0" promptText="Nhập nghĩa của từ">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="351.0" layoutY="512.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Thêm từ" />
+      <Button fx:id="addButton" layoutX="351.0" layoutY="512.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Thêm từ" />
    </children>
 </AnchorPane>

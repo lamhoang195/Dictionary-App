@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 public class Hangman extends Game{
     private char[] guessedLetters;
-    public Hangman(Word word) {
-        super();
+    public Hangman(Dictionary dictionary) {
+        super(dictionary);
         this.turns = 6;
-        this.word = word;
+        this.word = getRandomWord();
         guessedLetters = new char[word.getWordTarget().length()];
         initializeGuessedLetters();
     }
+
     public void L_Hold() {
         System.out.println("  ____");
         System.out.println(" |    |");
@@ -112,6 +113,7 @@ public class Hangman extends Game{
         return this.turns == 0 || new String(guessedLetters).equals(this.word.getWordTarget());
     }
 
+    //Đoán ký tự
     private boolean makeGuess(char letter) {
         boolean correctGuess = false;
         for (int i = 0; i < this.word.getWordTarget().length(); i++) {
@@ -147,6 +149,5 @@ public class Hangman extends Game{
                 System.out.println("Incorrect guess.");
             }
         }
-
     }
 }

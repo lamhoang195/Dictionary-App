@@ -53,8 +53,10 @@ public class Dictionary {
     public void addWord(Word word) {
         int check = storeTargetWord.search(word.getWordTarget());
         if (check == -1) {
-            wordList.add(word);
-            storeTargetWord.insert(word.getWordTarget(), wordList.size() - 1);
+            String wordTarget = word.getWordTarget();
+            int insertIndex = searchIndexInsert(0, wordList.size() - 1, wordTarget);
+            wordList.add(insertIndex, word);
+            storeTargetWord.insert(wordTarget, insertIndex);
         } else {
             System.out.println("The word already exists");
         }
@@ -82,19 +84,23 @@ public class Dictionary {
      * @param updateWordExplain word meaning
      */
     public void updateWord(String wordTarget, String updateWordExplain) {
-        removeWord(wordTarget);
-        addWord(new Word(wordTarget, updateWordExplain));
-        // System.out.println("Update successfully!");
-        // System.out.println("Word not found, update word failed!");
+        int index = binarySearchWord(wordTarget);
+        if (index != -1) {
+            wordList.get(index).setWordExplain(updateWordExplain);
+            storeTargetWord.insert(wordTarget, index); // Reinsert at the same position in the Trie
+            System.out.println("Word updated successfully!");
+        } else {
+            System.out.println("Word not found, could not update.");
+        }
     }
 
     /**
-     * Search word index.
+     * Find the index for inserting a word in sorted order.
      *
      * @param start      start index
      * @param end        end index
      * @param wordTarget word in English
-     * @return index
+     * @return index for insertion
      */
     private int searchIndexInsert(int start, int end, String wordTarget) {
         if (end < start) return start;
@@ -102,7 +108,7 @@ public class Dictionary {
         if (mid == wordList.size()) return mid;
         Word word = wordList.get(mid);
         int compare = word.getWordTarget().compareTo(wordTarget);
-        if (compare == 0) return -1;
+        if (compare == 0) return mid;
         if (compare > 0) return searchIndexInsert(start, mid - 1, wordTarget);
         return searchIndexInsert(mid + 1, end, wordTarget);
     }
@@ -165,4 +171,3 @@ public class Dictionary {
         return suggestions;
     }
 }
-

@@ -56,7 +56,6 @@ public class TranslateController extends GeneralController implements Initializa
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle the exception appropriately, e.g., show an error message
         }
     }
 
