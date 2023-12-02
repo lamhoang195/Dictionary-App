@@ -107,7 +107,14 @@ public class Hangman extends Game{
                 break;
         }
     }
-
+    public boolean checkCorrect() {
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < this.guessedLetters.length; ++i){
+            s.append(this.getGuessedLetters()[i]);
+        }
+        if (s.toString().equals(this.getWord().getWordTarget())) return true;
+        return false;
+    }
     private boolean isGameOver() {
         return this.turns == 0 || new String(guessedLetters).equals(this.word.getWordTarget());
     }
@@ -144,10 +151,10 @@ public class Hangman extends Game{
                 System.out.println("Please enter a valid letter.");
                 continue;
             }
-
             if (makeGuess(guess)) {
                 System.out.println("Good guess!");
-            } else {
+            }
+            else {
                 System.out.println("Incorrect guess.");
             }
         }

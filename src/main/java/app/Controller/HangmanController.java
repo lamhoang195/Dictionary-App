@@ -1,9 +1,11 @@
 package app.Controller;
 
 import app.CommandLine.Hangman;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,38 +22,52 @@ public class HangmanController extends GameController implements Initializable {
     public HBox guessLetters = new HBox();
     public TextField guessLetter;
     public Label wordTarget = new Label();
+    public Label checkWin = new Label();
+    public Label checkLose = new Label();
     @FXML
     private ImageView img1, img2, img3, img4, img5, img6, img7;
-    @FXML
-    private Label label = new Label();
-
     @FXML
     public Button Check;
     private Hangman hangman;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize();
-        hangman = new Hangman(dictionary); // Thay Dictionary bằng lớp từ điển thực tế của bạn
+        hangman = new Hangman(dictionary);
         wordExplainLabel.setText(hangman.getWord().getWordExplain());
-        String ex = "Example";
-        for (int i = 0; i < ex.length(); ++i) {
-            char  c = ex.charAt(i);
+        int l = this.hangman.getWord().getWordTarget().length();
+        for (int i = 0; i < l; i++) {
+            char c = hangman.getGuessedLetters()[i];
             Label label = new Label(String.valueOf(c));
             label.setStyle("-fx-font-size: 20; -fx-font-family: 'Arial'; -fx-alignment: center;-fx-font-weight: bold; -fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10;");
             label.setLayoutX(100 + i * 30);
             label.setLayoutY(50);
             label.setPrefWidth(30);
             guessLetters.getChildren().add(label);
-            Check.setOnAction(event -> checkGuess());
         }
-        wordTarget.setText(hangman.getWord().getWordTarget());
+        Check.setOnAction(event -> checkGuess());
         updateUI();
 
     }
-
+    public void displayGuessLetters() {
+        ObservableList<Node> children = guessLetters.getChildren();
+        int i = 0;
+        for (Node child : children) {
+            if (child instanceof Label) {
+                ((Label) child).setText(""+hangman.getGuessedLetters()[i]);
+                ++i;
+            }
+        }
+    }
     private void updateUI() {
         // Cập nhật giao diện người dùng dựa trên trạng thái hiện tại của trò chơi
-        label.setText(new String(hangman.getGuessedLetters()));
+        if (this.hangman.checkCorrect()) {
+            checkWin.setVisible(true);
+            checkWin.setStyle("-fx-text-fill = green; -fx-alignment: center;");
+            wordTarget.setText(hangman.getWord().getWordTarget());
+            wordTarget.setStyle("-fx-border-color: green; -fx-border-width: 2; -fx-alignment: center; -fx-border-radius: 10;");
+            return;
+        }
+        displayGuessLetters();
         switch (hangman.getTurns()) { // Giả sử getTurns() trả về số lượt còn lại
             case 6:
                 img1.setVisible(false);
@@ -78,16 +94,19 @@ public class HangmanController extends GameController implements Initializable {
                 break;
             case 0:
                 img6.setVisible(true);
+                checkLose.setVisible(true);
+                checkLose.setStyle("-fx-text-fill: red; -fx-alignment: center");
+                wordTarget.setText(hangman.getWord().getWordTarget());
+                wordTarget.setStyle("-fx-border-color: green; -fx-border-width: 2; -fx-alignment: center; -fx-border-radius: 10;");
                 break;
         }
     }
 
-    public void makeGuess(char letter) {
-        hangman.makeGuess(letter);
-        updateUI();
-    }
-
     public void checkGuess() {
-
+        char c = guessLetter.getText().charAt(0);
+        hangman.makeGuess(c);
+        updateUI();
+        guessLetter.setText("");
     }
+
 }
