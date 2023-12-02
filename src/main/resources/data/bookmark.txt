@@ -57,4 +57,4 @@ above	ở trên
 abroad	ở nước ngoài
 absence	vắng mặt
 absolute	tuyệt đối
-absorption	sự hấp thụ
+absorption	sự hấp thụhide	trốn
