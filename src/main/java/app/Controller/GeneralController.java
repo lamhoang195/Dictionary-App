@@ -1,5 +1,6 @@
 package app.Controller;
 
+import app.CommandLine.GivingWord;
 import app.CommandLine.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,9 +32,9 @@ public class GeneralController implements Initializable {
     @FXML
     private Button addButton;
     @FXML
-    private Button gameButton;
-
-
+    private Button GivingWordButton;
+    @FXML
+    private Button HangManButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         show("/GUI/SearcherGui.fxml");
@@ -66,10 +67,16 @@ public class GeneralController implements Initializable {
             }
         });
 
-        gameButton.setOnAction(new EventHandler<ActionEvent>() {
+        GivingWordButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                show("/GUI/GameGui.fxml");
+                show("/GUI/GivingWordGui.fxml");
+            }
+        });
+        HangManButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/HangmanGui.fxml");
             }
         });
     }

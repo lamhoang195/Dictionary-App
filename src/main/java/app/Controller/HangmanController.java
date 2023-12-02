@@ -1,59 +1,93 @@
 package app.Controller;
 
-import javafx.event.EventHandler;
+import app.CommandLine.Hangman;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class HangmanController {
+public class HangmanController extends GameController implements Initializable {
+    public Label wordExplainLabel = new Label();
+    public HBox guessLetters = new HBox();
+    public TextField guessLetter;
+    public Label wordTarget = new Label();
     @FXML
-    private VBox mainVBox;
+    private ImageView img1, img2, img3, img4, img5, img6, img7;
     @FXML
-    public ImageView img1,img2,img3,img4,img5,img6;
+    private Label label = new Label();
 
-    public void initialize() {
-        imageViews.add(img1);
-        imageViews.add(img2);
-        imageViews.add(img3);
-        imageViews.add(img4);
-        imageViews.add(img5);
-        imageViews.add(img6);
-        addClickEventHandlers(mainVBox);
+    @FXML
+    public Button Check;
+    private Hangman hangman;
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        super.initialize();
+        hangman = new Hangman(dictionary); // Thay Dictionary bằng lớp từ điển thực tế của bạn
+        wordExplainLabel.setText(hangman.getWord().getWordExplain());
+        String ex = "Example";
+        for (int i = 0; i < ex.length(); ++i) {
+            char  c = ex.charAt(i);
+            Label label = new Label(String.valueOf(c));
+            label.setStyle("-fx-font-size: 20; -fx-font-family: 'Arial'; -fx-alignment: center;-fx-font-weight: bold; -fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10;");
+            label.setLayoutX(100 + i * 30);
+            label.setLayoutY(50);
+            label.setPrefWidth(30);
+            guessLetters.getChildren().add(label);
+            Check.setOnAction(event -> checkGuess());
+        }
+        wordTarget.setText(hangman.getWord().getWordTarget());
+        updateUI();
+
     }
 
-    private void addClickEventHandlers(Parent parent) {
-        if (parent instanceof VBox) {
-            VBox vBox = (VBox) parent;
-            for (Node node : vBox.getChildren()) {
-                if (node instanceof HBox) {
-                    HBox hBox = (HBox) node;
-                    for (Node innerNode : hBox.getChildren()) {
-                        if (innerNode instanceof Label) {
-                            Label label = (Label) innerNode;
-                            label.setOnMouseClicked(getLabelClickHandler(label));
-                        }
-                    }
-                }
-            }
+    private void updateUI() {
+        // Cập nhật giao diện người dùng dựa trên trạng thái hiện tại của trò chơi
+        label.setText(new String(hangman.getGuessedLetters()));
+        switch (hangman.getTurns()) { // Giả sử getTurns() trả về số lượt còn lại
+            case 6:
+                img1.setVisible(false);
+                img2.setVisible(false);
+                img3.setVisible(false);
+                img4.setVisible(false);
+                img5.setVisible(false);
+                img6.setVisible(false);
+                break;
+            case 5:
+                img1.setVisible(true);
+                break;
+            case 4:
+                img2.setVisible(true);
+                break;
+            case 3:
+                img3.setVisible(true);
+                break;
+            case 2:
+                img4.setVisible(true);
+                break;
+            case 1:
+                img5.setVisible(true);
+                break;
+            case 0:
+                img6.setVisible(true);
+                break;
         }
     }
 
-    private EventHandler<MouseEvent> getLabelClickHandler(Label label) {
-        return event -> {
-            System.out.println("Clicked on label: " + label.getText());
-            imageViews.get(i).setVisible(true);
-            i++;
-        };
+    public void makeGuess(char letter) {
+        hangman.makeGuess(letter);
+        updateUI();
     }
 
-    private int i = 0;
-    private final List<ImageView> imageViews = new ArrayList<>();
+    public void checkGuess() {
+
+    }
 }

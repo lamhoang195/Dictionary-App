@@ -1,6 +1,5 @@
 package app.CommandLine;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class DictionaryCommandLine {
@@ -31,7 +30,7 @@ public class DictionaryCommandLine {
     public void displayAdvance() {
         DictionaryManagement management = new DictionaryManagement(dictionary);
         Scanner sc = new Scanner(System.in);
-        management.insertFromFile("src/main/resources/data/dictionaries_target_tab_explain.txt");
+        management.insertFromFile("src/main/resources/data/dictionaries.txt");
         System.out.println("Welcome to My Application!");
         while (true) {
             System.out.println("[0] Exit");
@@ -44,8 +43,7 @@ public class DictionaryCommandLine {
             System.out.println("[7] Game");
             System.out.println("[8] Import from file");
             System.out.println("[9] Export to file");
-            System.out.println("[10] Mini game");
-            System.out.print("Your action: ");
+            System.out.print("Your Choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
 
@@ -60,7 +58,7 @@ public class DictionaryCommandLine {
                     System.out.print("Enter a word to remove: ");
                     String wordToRemove = sc.nextLine();
                     wordToRemove = wordToRemove.trim().toLowerCase();
-                    management.removeWordCMD(wordToRemove);
+                    management.removeWord(wordToRemove);
                     break;
                 case 3:
                     System.out.print("Enter a word to update: ");
@@ -69,7 +67,7 @@ public class DictionaryCommandLine {
                     String wordTarget = sc.nextLine();
                     System.out.print("Vietnamese: ");
                     String updatedWordExplain = sc.nextLine();
-                    management.updateWordCMD(wordTarget, updatedWordExplain);
+                    management.updateWord(wordTarget, updatedWordExplain);
                     break;
                 case 4:
                     showAllWords();
@@ -77,7 +75,6 @@ public class DictionaryCommandLine {
                 case 5:
                     System.out.print("Enter a word to lookup: ");
                     String wordSearch = sc.nextLine();
-                    System.out.print("Word Explain: ");
                     System.out.println(management.dictionaryLookup(wordSearch));
                     break;
                 case 6:
@@ -92,22 +89,16 @@ public class DictionaryCommandLine {
                     String option;
                     option = choose.nextLine();
                     if (option.equals("C")) {
-                        Hangman hangmanGame = new Hangman(dictionary);
-                        hangmanGame.play();
+                        GivingWord gv = new GivingWord(dictionary);
+                        gv.play();
                     }
                 case 8:
-                    management.exportToFile(dictionary,"src/main/resources/data/new.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
                     System.out.println("Import to file succesfully!");
                     break;
                 case 9:
-                    management.exportToFile(dictionary,"src/main/resources/data/new.txt");
+                    management.exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
                     System.out.println("Export to file succesfully!");
-                    break;
-                case 10:
-                    System.out.println("You have 5 turns to guess the meaning of the word");
-                    break;
-                default:
-                    System.out.println("Action not supported.");
                     break;
             }
         }

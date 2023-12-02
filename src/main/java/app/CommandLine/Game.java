@@ -6,22 +6,28 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game{
+abstract class Game {
     protected Dictionary dictionary;
     protected Word word;
     protected int turns;
     protected int score;
+
     public Game(Dictionary dictionary) {
         this.score = 0;
         this.turns = 6;
         this.dictionary = dictionary;
     }
+    public Word getWord() {
+        return this.word;
+    }
     public int getTurns() {
         return turns;
     }
+
     public void setTurns(int turns) {
         this.turns = turns;
     }
+
     public void setScore(int score) {
         this.score = score;
     }
@@ -33,26 +39,8 @@ public class Game{
      */
     public Word getRandomWord() {
         Random rand = new Random();
-        int randomIndex = rand.nextInt(150);
+        int randomIndex = rand.nextInt(15);
         return dictionary.getWord(randomIndex);
     }
-
-    public void play() {
-        Scanner sc = new Scanner(System.in);
-        this.word = getRandomWord();
-        System.out.println( "Give the word which mean: " + this.word.getWordExplain());
-        while (this.turns > 0) {
-            System.out.print("Your answer: ");
-            String ans = sc.nextLine();
-            if (ans.equals(this.word.getWordTarget())) {
-                System.out.println("Correct!");
-                break;
-            }
-            else {
-                this.turns --;
-                System.out.println("Try again!");
-            }
-        }
-        if (this.turns == 0) System.out.println("You lose! The correct answer is: " + this.word.getWordTarget());
-    }
+    protected void play(){};
 }
