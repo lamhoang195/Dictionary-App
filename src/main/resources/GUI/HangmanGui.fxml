@@ -62,6 +62,16 @@
                 <Image url="@../media/game/7.jpg" />
             </image>
         </ImageView>
+        <Label fx:id="checkWin" layoutX="150" layoutY="370" prefHeight="35.0" text="You Win!" visible="false">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="checkLose" layoutX="150" layoutY="370" prefHeight="35.0"  text="You Lose!" visible="false">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
         <VBox fx:id="mainVBox" layoutX="350" layoutY="50" spacing="30">
             <children>
                 <Label text="Let's Play With The Word Below" layoutX="200" layoutY="50" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
@@ -71,7 +81,7 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
-                <HBox fx:id = "guessLetters" spacing="10">
+                <HBox fx:id = "guessLetters" spacing="5">
                 </HBox>
                 <Label text="Enter Your Letter: " layoutX="200" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
                 <HBox>
@@ -82,11 +92,12 @@
 
             </children>
         </VBox>
-        <Label fx:id="wordTarget" layoutX="280" layoutY="450" prefHeight="35.0" prefWidth="200.0" style="-fx-border-color: green; -fx-border-width: 2; -fx-alignment: center; -fx-border-radius: 10;">
+        <Label fx:id="wordTarget" layoutX="280" layoutY="450" prefHeight="35.0" prefWidth="200.0">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+
         <Label text="Guess letter to complete English word, which has meaning in Vietnamese you see" layoutX="150" layoutY="500" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
 
     </children>
