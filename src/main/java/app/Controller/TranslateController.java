@@ -13,7 +13,7 @@ import javafx.scene.control.TextArea;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TranslateController implements Initializable {
+public class TranslateController extends GeneralController implements Initializable {
 
     @FXML
     private TextArea inputTextArea;

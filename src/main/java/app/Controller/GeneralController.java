@@ -30,6 +30,9 @@ public class GeneralController implements Initializable {
     private Button searchButton;
     @FXML
     private Button addButton;
+    @FXML
+    private Button gameButton;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,6 +65,13 @@ public class GeneralController implements Initializable {
                 show("/GUI/AdditionGui.fxml");
             }
         });
+
+        gameButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/GameGui.fxml");
+            }
+        });
     }
 
     @FXML
@@ -79,6 +89,4 @@ public class GeneralController implements Initializable {
             e.printStackTrace();
         }
     }
-
-
 }

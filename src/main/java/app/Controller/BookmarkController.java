@@ -21,7 +21,7 @@ import javafx.scene.web.WebView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class BookmarkController implements Initializable {
+public class BookmarkController extends GeneralController implements Initializable {
     private final String PATH = "src/main/resources/data/bookmark.txt";
 
     @FXML
@@ -70,22 +70,6 @@ public class BookmarkController implements Initializable {
                 handleTypedWord();
             }
         });
-    }
-
-    @FXML
-    private void setChildren(Node node) {
-        main.getChildren().clear();
-        main.getChildren().add(node);
-    }
-
-    @FXML
-    private void show(String path) {
-        try {
-            AnchorPane children = FXMLLoader.load(getClass().getResource(path));
-            setChildren(children);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML
