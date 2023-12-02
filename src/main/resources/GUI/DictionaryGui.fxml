@@ -43,7 +43,7 @@
                   <String fx:value="button-translate" />
                </styleClass>
             </Button>
-            <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="57.0" text="HangMan" textFill="#47586b">
+            <Button fx:id="HangManButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="57.0" text="HangMan" textFill="#47586b">
                <font>
                   <Font size="7.0" />
                </font>

@@ -8,193 +8,86 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.HangmanController">
     <children>
-        <ImageView fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+        <HBox alignment="CENTER" layoutX="250" layoutY="0" spacing="10">
+            <Label text="H" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="A" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="N" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="G" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="M" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="A" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="N" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="     " style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="G" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="A" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="M" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label text="E" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+        </HBox>
+
+        <ImageView fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../media/game/1.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="img1" fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <ImageView fx:id="img1" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/2.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="img2" fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <ImageView fx:id="img2" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/3.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="img3" fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <ImageView fx:id="img3" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/4.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="img4" fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <ImageView fx:id="img4" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/5.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="img5" fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <ImageView fx:id="img5" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/6.jpg" />
             </image>
         </ImageView>
-        <ImageView fx:id="img6" fitHeight="285.0" fitWidth="215.0" layoutX="553.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <ImageView fx:id="img6" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/7.jpg" />
             </image>
         </ImageView>
-        <VBox fx:id="mainVBox" layoutX="101.0" layoutY="359.0" prefHeight="210.0" prefWidth="598.0">
+        <VBox fx:id="mainVBox" layoutX="350" layoutY="50" spacing="30">
             <children>
-                <HBox prefHeight="70.0" prefWidth="478.0">
-                    <children>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="Q" textAlignment="RIGHT">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="W" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="E">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-radius: 20; -fx-background-color: grey;" text="R" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-radius: 20; -fx-background-color: grey;" text="T" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-radius: 20; -fx-background-color: grey;" text="Y" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-radius: 20; -fx-background-color: grey;" text="U" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-radius: 20; -fx-background-color: grey;" text="I" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-radius: 20; -fx-background-color: grey;" text="O" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                    </children>
+                <Label text="Let's Play With The Word Below" layoutX="200" layoutY="50" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+                <Label text="" layoutX="200" layoutY="55" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
+                <Label fx:id="wordExplainLabel" layoutX="350" layoutY="60" prefHeight="35.0" prefWidth="156.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-alignment: center; -fx-border-radius: 10;">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <HBox fx:id = "guessLetters" spacing="10">
                 </HBox>
-                <HBox prefHeight="70.0" prefWidth="478.0">
-                    <children>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="P" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="A" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="S" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="D" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="F" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="G" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="H" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="J" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="K" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                    </children>
+                <Label text="Enter Your Letter: " layoutX="200" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+                <HBox>
+                    <TextField fx:id="guessLetter" layoutX="77.0" layoutY="300.0" prefHeight="31.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10;" />
+                    <Button fx:id="Check" layoutX="351.0" layoutY="512.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Kiểm tra" onAction="#checkGuess" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
+
                 </HBox>
-                <HBox prefHeight="70.0" prefWidth="478.0">
-                    <children>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="L" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="Z" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="X" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="C" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="V" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="B" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="N" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="M" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label prefHeight="70.0" prefWidth="66.0" style="-fx-background-color: grey; -fx-background-radius: 20;" text="-" textAlignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="36.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </HBox>
+
             </children>
         </VBox>
+        <Label fx:id="wordTarget" layoutX="280" layoutY="450" prefHeight="35.0" prefWidth="200.0" style="-fx-border-color: green; -fx-border-width: 2; -fx-alignment: center; -fx-border-radius: 10;">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label text="Guess letter to complete English word, which has meaning in Vietnamese you see" layoutX="150" layoutY="500" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
+
     </children>
 </AnchorPane>

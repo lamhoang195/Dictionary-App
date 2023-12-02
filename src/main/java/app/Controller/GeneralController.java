@@ -33,6 +33,8 @@ public class GeneralController implements Initializable {
     private Button addButton;
     @FXML
     private Button GivingWordButton;
+    @FXML
+    private Button HangManButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         show("/GUI/SearcherGui.fxml");
@@ -71,7 +73,12 @@ public class GeneralController implements Initializable {
                 show("/GUI/GivingWordGui.fxml");
             }
         });
-
+        HangManButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/HangmanGui.fxml");
+            }
+        });
     }
 
     @FXML
