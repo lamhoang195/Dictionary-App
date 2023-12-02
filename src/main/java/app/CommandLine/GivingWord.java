@@ -1,5 +1,4 @@
 package app.CommandLine;
-
 import java.util.Scanner;
 
 public class GivingWord extends Game{
@@ -10,7 +9,7 @@ public class GivingWord extends Game{
         this.turns = 5;
         this.score = 0;
     }
-
+    @Override
     public void play() {
         Scanner sc = new Scanner(System.in);
         System.out.println( "Give the word which mean: " + this.word.getWordExplain());

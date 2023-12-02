@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game {
+abstract class Game {
     protected Dictionary dictionary;
     protected Word word;
     protected int turns;
