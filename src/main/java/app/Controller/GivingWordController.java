@@ -51,8 +51,8 @@ public class GivingWordController extends GameController implements Initializabl
             System.out.println("Incorrect. Try again.");
             englishWord.setText(englishWord.getText() + " X (Try again)");
             englishWord.setStyle("-fx-text-fill: red;"); // Đặt màu chữ của TextField thành đỏ
-
         }
+
     }
 
 
