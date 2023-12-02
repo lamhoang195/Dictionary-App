@@ -1,5 +1,6 @@
 package app.Controller;
 
+import app.CommandLine.GivingWord;
 import app.CommandLine.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,7 +31,8 @@ public class GeneralController implements Initializable {
     private Button searchButton;
     @FXML
     private Button addButton;
-
+    @FXML
+    private Button GivingWordButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         show("/GUI/SearcherGui.fxml");
@@ -63,6 +65,13 @@ public class GeneralController implements Initializable {
             }
         });
 
+        GivingWordButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/GivingWordGui.fxml");
+            }
+        });
+
     }
 
     @FXML
@@ -80,6 +89,4 @@ public class GeneralController implements Initializable {
             e.printStackTrace();
         }
     }
-
-
 }

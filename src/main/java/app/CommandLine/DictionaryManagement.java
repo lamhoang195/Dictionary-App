@@ -1,6 +1,5 @@
 package app.CommandLine;
 
-
 import java.util.*;
 import java.io.*;
 
@@ -78,18 +77,6 @@ public class DictionaryManagement extends Dictionary{
         }
     }
 
-    public void addWordToHistoryFile(Dictionary dictionary, String englishWord, String explanation) {
-        try {
-            FileWriter fileWriter = new FileWriter("src/main/resources/data/bookmark.txt", true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(englishWord + "\t" + explanation);
-            bufferedWriter.newLine();
-            bufferedWriter.close();
-        } catch (Exception e) {
-            System.out.println("Something went wrong: " + e);
-        }
-    }
-
     /**
      * Insert word from commandline.
      *
@@ -108,8 +95,32 @@ public class DictionaryManagement extends Dictionary{
             wordMeaning = wordMeaning.toLowerCase();
             Word word = new Word(wordTarget, wordMeaning);
             dictionary.addWord(word);
-            exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+            exportToFile(dictionary,"src/main/resources/data/dictionaries_target_tab_explain.txt");
         }
+    }
+
+    /**
+     * Add word.
+     *
+     * @param wordTarget    word in English
+     * @param wordExplain   word meaning
+     */
+    public void addWord(String wordTarget, String wordExplain) {
+        wordTarget = wordTarget.toLowerCase();
+        wordExplain = wordExplain.toLowerCase();
+
+        Word newWord = new Word(wordTarget, wordExplain);
+        dictionary.addWord(newWord);
+        exportToFile(dictionary, "src/main/resources/data/dictionaries.txt");
+    }
+
+    public void addWordCMD(String wordTarget, String wordExplain) {
+        wordTarget = wordTarget.toLowerCase();
+        wordExplain = wordExplain.toLowerCase();
+
+        Word newWord = new Word(wordTarget, wordExplain);
+        dictionary.addWord(newWord);
+        exportToFile(dictionary, "src/main/resources/data/dictionaries_target_tab_explain.txt");
     }
 
     /**
@@ -122,9 +133,9 @@ public class DictionaryManagement extends Dictionary{
         exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
     }
 
-    public void removeWordInHistory(String English) {
+    public void removeWordCMD(String English) {
         dictionary.removeWord(English);
-        exportToFile(dictionary,"src/main/resources/data/bookmark.txt");
+        exportToFile(dictionary,"src/main/resources/data/dictionaries_target_tab_explain.txt");
     }
 
     /**
@@ -138,6 +149,30 @@ public class DictionaryManagement extends Dictionary{
         wordMeaning = wordMeaning.toLowerCase();
         dictionary.updateWord(wordTarget, wordMeaning);
         exportToFile(dictionary,"src/main/resources/data/dictionaries.txt");
+    }
+
+    public void updateWordCMD(String wordTarget, String wordMeaning) {
+        wordTarget = wordTarget.toLowerCase();
+        wordMeaning = wordMeaning.toLowerCase();
+        dictionary.updateWord(wordTarget, wordMeaning);
+        exportToFile(dictionary,"src/main/resources/data/dictionaries_target_tab_explain.txt");
+    }
+
+    public void addWordToHistoryFile(Dictionary dictionary, String englishWord, String explanation) {
+        try {
+            FileWriter fileWriter = new FileWriter("src/main/resources/data/bookmark.txt", true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(englishWord + "\t" + explanation);
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        } catch (Exception e) {
+            System.out.println("Something went wrong: " + e);
+        }
+    }
+
+    public void removeWordInHistory(String English) {
+        dictionary.removeWord(English);
+        exportToFile(dictionary,"src/main/resources/data/bookmark.txt");
     }
 
     /**
@@ -170,6 +205,4 @@ public class DictionaryManagement extends Dictionary{
             System.out.println("No found prefix word!");
         }
     }
-
-
 }

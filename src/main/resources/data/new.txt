@@ -1,3 +1,4 @@
+abandoned	bỏ hoang
 abilities	khả năng
 ability	khả năng
 able	có khả năng
@@ -4048,8 +4049,6 @@ jewellery	đồ trang sức
 jewelry	trang sức
 jewish	người do thái
 jews	người do thái
-jjj	mmm
-jkjk	mmm
 jo	tham gia
 joan	tham gia
 job	công việc
@@ -8384,3 +8383,4 @@ zoo	sở thú
 zoom	thu phóng
 zope	dây
 zshops	cửa hàng
+a	aaaa

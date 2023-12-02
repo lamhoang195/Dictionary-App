@@ -1,17 +1,17 @@
 package app.CommandLine;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman extends Game{
     private char[] guessedLetters;
-    public Hangman(Word word) {
-        super();
+    public Hangman(Dictionary dictionary) {
+        super(dictionary);
         this.turns = 6;
-        this.word = word;
+        this.word = getRandomWord();
         guessedLetters = new char[word.getWordTarget().length()];
         initializeGuessedLetters();
     }
+
     public void L_Hold() {
         System.out.println("  ____");
         System.out.println(" |    |");
@@ -112,7 +112,11 @@ public class Hangman extends Game{
         return this.turns == 0 || new String(guessedLetters).equals(this.word.getWordTarget());
     }
 
-    private boolean makeGuess(char letter) {
+    public char[] getGuessedLetters(){
+        return this.guessedLetters;
+    }
+    //Đoán ký tự
+    public boolean makeGuess(char letter) {
         boolean correctGuess = false;
         for (int i = 0; i < this.word.getWordTarget().length(); i++) {
             if (this.word.getWordTarget().charAt(i) == letter) {
@@ -126,6 +130,9 @@ public class Hangman extends Game{
         return correctGuess;
     }
 
+    public Word getWord() {
+        return this.word;
+    }
     public void play() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(this.word.getWordExplain());
@@ -147,6 +154,5 @@ public class Hangman extends Game{
                 System.out.println("Incorrect guess.");
             }
         }
-
     }
 }
