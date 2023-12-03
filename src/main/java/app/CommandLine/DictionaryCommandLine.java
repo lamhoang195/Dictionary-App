@@ -44,7 +44,6 @@ public class DictionaryCommandLine {
             System.out.println("[7] Game");
             System.out.println("[8] Import from file");
             System.out.println("[9] Export to file");
-            System.out.println("[10] Mini game");
             System.out.print("Your action: ");
             int choice = sc.nextInt();
             sc.nextLine();
@@ -102,9 +101,6 @@ public class DictionaryCommandLine {
                 case 9:
                     management.exportToFile(dictionary,"src/main/resources/data/new.txt");
                     System.out.println("Export to file succesfully!");
-                    break;
-                case 10:
-                    System.out.println("You have 5 turns to guess the meaning of the word");
                     break;
                 default:
                     System.out.println("Action not supported.");

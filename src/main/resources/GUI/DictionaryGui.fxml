@@ -43,7 +43,7 @@
                   <String fx:value="button-translate" />
                </styleClass>
             </Button>
-            <Button fx:id="gameButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="57.0" text="Game" textFill="#47586b">
+            <Button fx:id="playButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="57.0" text="Game" textFill="#47586b">
                <font>
                   <Font size="7.0" />
                </font>
@@ -59,6 +59,12 @@
                <styleClass>
                   <String fx:value="text-navi-bar" />
                   <String fx:value="button-history" />
+               </styleClass>
+            </Button>
+            <Button fx:id="GivingWordButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="57.0" prefWidth="58.0" text="GivingWord" textFill="#ccbdbd">
+               <styleClass>
+                  <String fx:value="text-navi-bar" />
+                  <String fx:value="button-favourite" />
                </styleClass>
             </Button>
             <Button fx:id="addButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="57.0" prefWidth="58.0" text="Thêm từ" textFill="#ccbdbd">

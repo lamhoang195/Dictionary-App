@@ -92,6 +92,22 @@ public class SearchController extends GeneralController implements Initializable
     }
 
     @FXML
+    private void setChildren(Node node) {
+        main.getChildren().clear();
+        main.getChildren().add(node);
+    }
+
+    @FXML
+    private void show(String path) {
+        try {
+            AnchorPane children = FXMLLoader.load(getClass().getResource(path));
+            setChildren(children);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleTypedWord() {
         String s = searchZone.getText();
         ArrayList<String> suggestions = dictionary.searcher(s, false);

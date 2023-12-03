@@ -57,8 +57,6 @@ public class Dictionary {
             int insertIndex = searchIndexInsert(0, wordList.size() - 1, wordTarget);
             wordList.add(insertIndex, word);
             storeTargetWord.insert(wordTarget, insertIndex);
-        } else {
-            System.out.println("The word already exists");
         }
     }
 
@@ -72,8 +70,6 @@ public class Dictionary {
         if (check != -1) {
             wordList.remove(check);
             System.out.println("Remove successfully!");
-        } else {
-            System.out.println("Word not found, no word removed.");
         }
     }
 
@@ -91,6 +87,22 @@ public class Dictionary {
             System.out.println("Word updated successfully!");
         } else {
             System.out.println("Word not found, could not update.");
+        }
+    }
+
+    /**
+     * Look up.
+     *
+     * @param wordTarget word in English
+     * @return mean in Vietnamese
+     */
+    public String lookupWord(String wordTarget) {
+        int index = binarySearchWord(wordTarget);
+        int check = storeTargetWord.search(wordTarget);
+        if (check == -1) {
+            return null;
+        } else {
+            return wordList.get(index).getWordExplain();
         }
     }
 
@@ -136,22 +148,6 @@ public class Dictionary {
         }
         return -1;
     }
-
-    /**
-     * Look up.
-     *
-     * @param wordTarget word in English
-     * @return mean in Vietnamese
-     */
-    public String lookupWord(String wordTarget) {
-        int check = storeTargetWord.search(wordTarget);
-        if (check == -1) {
-            return null;
-        } else {
-            return wordList.get(check).getWordExplain();
-        }
-    }
-
 
     /**
      * Get word at index i.

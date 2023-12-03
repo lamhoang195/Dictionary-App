@@ -1,5 +1,6 @@
 package app.Controller;
 
+import app.CommandLine.GivingWord;
 import app.CommandLine.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,10 +10,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.HTMLEditor;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +24,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GeneralController implements Initializable {
+    public Button playButton;
     @FXML
     private AnchorPane main;
     @FXML
@@ -31,9 +36,9 @@ public class GeneralController implements Initializable {
     @FXML
     private Button addButton;
     @FXML
-    private Button gameButton;
-
-
+    private Button GivingWordButton;
+    @FXML
+    private Button HangManButton;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         show("/GUI/SearcherGui.fxml");
@@ -66,10 +71,16 @@ public class GeneralController implements Initializable {
             }
         });
 
-        gameButton.setOnAction(new EventHandler<ActionEvent>() {
+        GivingWordButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                show("/GUI/GameGui.fxml");
+                show("/GUI/GivingWordGui.fxml");
+            }
+        });
+        playButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                game();
             }
         });
     }
@@ -89,4 +100,22 @@ public class GeneralController implements Initializable {
             e.printStackTrace();
         }
     }
+    private void game(){
+        try {
+            // Tải GameGui.fxml
+            Parent gameGui = FXMLLoader.load(getClass().getResource("/GUI/GameGui.fxml"));
+
+            // Tạo một cảnh mới với GameGui.fxml
+            Scene gameGuiScene = new Scene(gameGui);
+
+            // Lấy stage hiện tại
+            Stage window = (Stage) playButton.getScene().getWindow();
+
+            // Đặt cảnh mới cho stage
+            window.setScene(gameGuiScene);
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    };
 }
