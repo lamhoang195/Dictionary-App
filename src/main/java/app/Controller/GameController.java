@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -23,6 +24,9 @@ public class GameController implements Initializable {
     @FXML
     public Button playButton;
     public Button exitButton;
+    public AnchorPane Game;
+    public ImageView HangMan;
+    public ImageView GivingWord;
     @FXML
     private AnchorPane pane;
     protected Dictionary dictionary = new Dictionary();
@@ -35,11 +39,11 @@ public class GameController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.initialize1();
-        playButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                show("/GUI/HangmanGui.fxml");
-            }
+        HangMan.setOnMouseClicked(mouseEvent -> {
+            show("/GUI/HangmanGUI.fxml");
+        });
+        GivingWord.setOnMouseClicked(mouseEvent -> {
+            show("/GUI/GivingWordGui.fxml");
         });
         exitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -50,8 +54,8 @@ public class GameController implements Initializable {
     }
     @FXML
     private void setChildren(Node node) {
-        pane.getChildren().clear();
-        pane.getChildren().add(node);
+        Game.getChildren().clear();
+        Game.getChildren().add(node);
     }
     public void exit() {
         try {
