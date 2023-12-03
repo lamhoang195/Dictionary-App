@@ -31,7 +31,7 @@ public class GivingWordController extends GameController implements Initializabl
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Khởi tạo từ điển và trò chơi
-        super.initialize();
+        super.initialize1();
         game = new GivingWord(dictionary);
         wordExplainLabel.setText(game.getWord().getWordExplain());
        // System.out.println(game.getWord().getWordExplain());
@@ -62,13 +62,4 @@ public class GivingWordController extends GameController implements Initializabl
         main.getChildren().add(node);
     }
 
-    @FXML
-    private void show(String path) {
-        try {
-            AnchorPane children = FXMLLoader.load(getClass().getResource(path));
-            setChildren(children);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
