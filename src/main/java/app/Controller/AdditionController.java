@@ -1,21 +1,17 @@
 package app.Controller;
 
-import app.CommandLine.Word;
+
 import app.CommandLine.Dictionary;
 import app.CommandLine.DictionaryManagement;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
-import javafx.scene.web.WebView;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.*;
 import java.io.*;
 
-
-import javafx.concurrent.Worker;public class AdditionController implements Initializable {
+public class AdditionController implements Initializable {
     private final String PATH = "src/main/resources/data/dictionaries.txt";
 
     @FXML
