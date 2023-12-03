@@ -29,35 +29,40 @@
 
         <ImageView fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../media/game/1.jpg" />
+                <Image url="@../media/game/default.jpg" />
             </image>
         </ImageView>
         <ImageView fx:id="img1" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
-                <Image url="@../media/game/2.jpg" />
+                <Image url="@../media/game/1.jpg" />
             </image>
         </ImageView>
         <ImageView fx:id="img2" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
-                <Image url="@../media/game/3.jpg" />
+                <Image url="@../media/game/2.jpg" />
             </image>
         </ImageView>
         <ImageView fx:id="img3" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
-                <Image url="@../media/game/4.jpg" />
+                <Image url="@../media/game/3.jpg" />
             </image>
         </ImageView>
         <ImageView fx:id="img4" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
-                <Image url="@../media/game/5.jpg" />
+                <Image url="@../media/game/4.jpg" />
             </image>
         </ImageView>
         <ImageView fx:id="img5" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
-                <Image url="@../media/game/6.jpg" />
+                <Image url="@../media/game/5.jpg" />
             </image>
         </ImageView>
         <ImageView fx:id="img6" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../media/game/6.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="img7" fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../media/game/7.jpg" />
             </image>
@@ -72,7 +77,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <VBox fx:id="mainVBox" layoutX="350" layoutY="50" spacing="30">
+        <VBox layoutX="350" layoutY="50" spacing="30">
             <children>
                 <Label text="Let's Play With The Word Below" layoutX="200" layoutY="50" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
                 <Label text="" layoutX="200" layoutY="55" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
@@ -97,7 +102,8 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-
+        <Button fx:id="playAgain" layoutX="490" layoutY="450" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" onAction="#setKeepPlaying" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
+        <Button fx:id="Exit" layoutX="550" layoutY="450" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Exit" onAction="#setNotKeepPlaying" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
         <Label text="Guess letter to complete English word, which has meaning in Vietnamese you see" layoutX="150" layoutY="500" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
 
     </children>
