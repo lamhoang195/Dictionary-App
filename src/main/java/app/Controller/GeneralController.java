@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GeneralController implements Initializable {
-    public Button playButton;
     @FXML
     private AnchorPane main;
     @FXML
@@ -36,9 +35,9 @@ public class GeneralController implements Initializable {
     @FXML
     private Button addButton;
     @FXML
-    private Button GivingWordButton;
-    @FXML
     private Button HangManButton;
+    @FXML
+    private Button menuGames;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         show("/GUI/SearcherGui.fxml");
@@ -71,16 +70,10 @@ public class GeneralController implements Initializable {
             }
         });
 
-        GivingWordButton.setOnAction(new EventHandler<ActionEvent>() {
+        menuGames.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                show("/GUI/GivingWordGui.fxml");
-            }
-        });
-        playButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                game();
+                show("/GUI/MenuGame.fxml");
             }
         });
     }
@@ -100,22 +93,4 @@ public class GeneralController implements Initializable {
             e.printStackTrace();
         }
     }
-    private void game(){
-        try {
-            // Tải GameGui.fxml
-            Parent gameGui = FXMLLoader.load(getClass().getResource("/GUI/GameGui.fxml"));
-
-            // Tạo một cảnh mới với GameGui.fxml
-            Scene gameGuiScene = new Scene(gameGui);
-
-            // Lấy stage hiện tại
-            Stage window = (Stage) playButton.getScene().getWindow();
-
-            // Đặt cảnh mới cho stage
-            window.setScene(gameGuiScene);
-            window.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    };
 }

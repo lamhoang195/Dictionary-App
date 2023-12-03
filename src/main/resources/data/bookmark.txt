@@ -58,3 +58,10 @@ abroad	ở nước ngoài
 absence	vắng mặt
 absolute	tuyệt đối
 absorption	sự hấp thụhide	trốn
+abilities	khả năng
+ability	khả năng
+able	có khả năng
+aboriginal	thổ dân
+abortion	phá thai
+accepts	chấp nhận
+action	hành động

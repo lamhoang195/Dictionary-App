@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,23 +11,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.HangmanController">
     <children>
         <HBox alignment="CENTER" layoutX="250" layoutY="0" spacing="10">
-            <Label text="H" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="A" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="N" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="G" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="M" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="A" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="N" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="     " style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="G" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="A" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="M" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-            <Label text="E" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="H" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="A" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="N" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="G" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="M" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="A" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="N" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="     " />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="G" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="A" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="M" />
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="E" />
         </HBox>
 
         <ImageView fitHeight="350.0" fitWidth="260.0" layoutX="51.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
@@ -72,26 +73,29 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Label fx:id="checkLose" layoutX="150" layoutY="370" prefHeight="35.0"  text="You Lose!" visible="false">
+        <Label fx:id="checkLose" layoutX="150" layoutY="370" prefHeight="35.0" text="You Lose!" visible="false">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
         <VBox layoutX="350" layoutY="50" spacing="30">
             <children>
-                <Label text="Let's Play With The Word Below" layoutX="200" layoutY="50" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-                <Label text="" layoutX="200" layoutY="55" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
+                <Label layoutX="200" layoutY="50" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="Let's Play With The Word Below" />
+                <Label layoutX="200" layoutY="55" style="-fx-font-size: 13; -fx-font-family: 'Arial';" text="" />
                 <Label fx:id="wordExplainLabel" layoutX="350" layoutY="60" prefHeight="35.0" prefWidth="156.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-alignment: center; -fx-border-radius: 10;">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
-                <HBox fx:id = "guessLetters" spacing="5">
+                <HBox fx:id="guessLetters" spacing="5">
                 </HBox>
-                <Label text="Enter Your Letter: " layoutX="200" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
-                <HBox>
-                    <TextField fx:id="guessLetter" layoutX="77.0" layoutY="300.0" prefHeight="31.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10;" />
-                    <Button fx:id="Check" layoutX="351.0" layoutY="512.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Kiểm tra" onAction="#checkGuess" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
+                <Label layoutX="200" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="Enter Your Letter: " />
+                <HBox prefHeight="41.0" prefWidth="380.0">
+                    <TextField fx:id="guessLetter" layoutX="77.0" layoutY="300.0" prefHeight="37.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10;" />
+                    <Button fx:id="Check" layoutX="351.0" layoutY="512.0" mnemonicParsing="false" onAction="#checkGuess" prefHeight="39.0" prefWidth="97.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" text="Kiểm tra">
+                  <HBox.margin>
+                     <Insets left="8.0" />
+                  </HBox.margin></Button>
 
                 </HBox>
 
@@ -102,9 +106,9 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Button fx:id="playAgain" layoutX="490" layoutY="450" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" onAction="#setKeepPlaying" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
-        <Button fx:id="Exit" layoutX="550" layoutY="450" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Exit" onAction="#setNotKeepPlaying" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
-        <Label text="Guess letter to complete English word, which has meaning in Vietnamese you see" layoutX="150" layoutY="500" style="-fx-font-size: 13; -fx-font-family: 'Arial';" />
+        <Button fx:id="playAgain" layoutX="555.0" layoutY="410.0" mnemonicParsing="false" onAction="#setKeepPlaying" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" text="Continue" />
+        <Button fx:id="Exit" layoutX="555.0" layoutY="460.0" mnemonicParsing="false" onAction="#setNotKeepPlaying" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" text="Exit" />
+        <Label layoutX="150" layoutY="500" style="-fx-font-size: 13; -fx-font-family: 'Arial';" text="Guess letter to complete English word, which has meaning in Vietnamese you see" />
 
     </children>
 </AnchorPane>
