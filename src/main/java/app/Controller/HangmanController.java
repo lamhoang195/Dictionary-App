@@ -149,20 +149,17 @@ public class HangmanController extends GameController implements Initializable {
 
     public void setNotKeepPlaying() {
         try {
-            // Tải GameGui.fxml
-            Parent gameGui = FXMLLoader.load(getClass().getResource("/GUI/GameGui.fxml"));
+            // Tải MenuGame.fxml
+            Parent menuGame = FXMLLoader.load(getClass().getResource("/GUI/MenuGame.fxml"));
 
-            // Tạo một cảnh mới với GameGui.fxml
-            Scene gameGuiScene = new Scene(gameGui);
+            // Lấy scene hiện tại từ một control (ở đây, Exit là một ví dụ)
+            Scene currentScene = Exit.getScene();
 
-            // Lấy stage hiện tại
-            Stage window = (Stage) Exit.getScene().getWindow();
-
-            // Đặt cảnh mới cho stage
-            window.setScene(gameGuiScene);
-            window.show();
+            // Thay đổi gốc của Parent trong Scene thành MenuGame.fxml
+            currentScene.setRoot(menuGame);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }
