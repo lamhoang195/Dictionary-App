@@ -150,7 +150,7 @@ public class HangmanController extends GameController implements Initializable {
     public void setNotKeepPlaying() {
         try {
             // Tải MenuGame.fxml
-            Parent menuGame = FXMLLoader.load(getClass().getResource("/GUI/MenuGame.fxml"));
+            Parent menuGame = FXMLLoader.load(getClass().getResource("/GUI/DictionaryGui.fxml"));
 
             // Lấy scene hiện tại từ một control (ở đây, Exit là một ví dụ)
             Scene currentScene = Exit.getScene();

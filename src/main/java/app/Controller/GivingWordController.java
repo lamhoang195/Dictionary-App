@@ -87,9 +87,9 @@ public class GivingWordController extends GameController implements Initializabl
     public void setNotKeepPlaying() {
         try {
             // Tải GameGui.fxml
-            Parent gameGui = FXMLLoader.load(getClass().getResource("/GUI/GameGui.fxml"));
+            Parent gameGui = FXMLLoader.load(getClass().getResource("/GUI/DictionaryGui.fxml"));
 
-            // Tạo một cảnh mới với GameGui.fxml
+            // Tạo một cảnh mới với DictionaryGui.fxml
             Scene gameGuiScene = new Scene(gameGui);
 
             // Lấy stage hiện tại

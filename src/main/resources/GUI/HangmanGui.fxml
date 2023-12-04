@@ -108,7 +108,7 @@
       </Label>
       <Button fx:id="playAgain" layoutX="555.0" layoutY="410.0" mnemonicParsing="false" onAction="#setKeepPlaying" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" text="Continue" />
       <Button fx:id="Exit" layoutX="555.0" layoutY="460.0" mnemonicParsing="false" onAction="#setNotKeepPlaying" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" text="Exit" />
-      <Label layoutX="150" layoutY="500" style="-fx-font-size: 13; -fx-font-family: 'Arial';" text="Guess letter to complete English word, which has meaning in Vietnamese you see" />
+      <Label layoutX="150.0" layoutY="520.0" style="-fx-font-size: 13; -fx-font-family: 'Arial';" text="Guess letter to complete English word, which has meaning in Vietnamese you see" />
 
    </children>
 </AnchorPane>

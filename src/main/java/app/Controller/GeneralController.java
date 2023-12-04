@@ -2,6 +2,9 @@ package app.Controller;
 
 import app.CommandLine.GivingWord;
 import app.CommandLine.Word;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +30,8 @@ public class GeneralController implements Initializable {
     @FXML
     private AnchorPane main;
     @FXML
+    public AnchorPane parent;
+    @FXML
     private Button bookmarkButton;
     @FXML
     private Button transButton;
@@ -35,12 +40,13 @@ public class GeneralController implements Initializable {
     @FXML
     private Button addButton;
     @FXML
-    private Button HangManButton;
-    @FXML
     private Button menuGames;
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        show("/GUI/SearcherGui.fxml");
+        show("/GUI/MenuGame.fxml");
 
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -93,4 +99,5 @@ public class GeneralController implements Initializable {
             e.printStackTrace();
         }
     }
+
 }
