@@ -29,7 +29,7 @@ public class GameController implements Initializable {
     protected Dictionary dictionary = new Dictionary();
     protected DictionaryManagement management = new DictionaryManagement(dictionary);
     protected Word word = new Word();
-    private final  String HISTORY_PATH = "src/main/resources/data/dictionaries_target_tab_explain.txt";
+    private final String HISTORY_PATH = "src/main/resources/data/dictionaries_target_tab_explain.txt";
     public void initialize1() {
         management.insertFromFile(HISTORY_PATH);
     }
