@@ -3,47 +3,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.web.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.GivingWordController">
     <children>
         <HBox alignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="40.0">
-            <Label text="Hãy đưa ra nghĩa của từ tiếng Anh sau:" style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" />
+            <Label style="-fx-font-size: 25; -fx-font-weight: bold; -fx-font-family: 'Arial';" text="Hãy đưa ra nghĩa của từ tiếng Anh sau:" />
         </HBox>
-        <Label prefHeight="31.0" prefWidth="156.0" text="Bạn có 5 lần đoán từ" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="70">
+        <Label layoutX="329.0" layoutY="70.0" prefHeight="31.0" prefWidth="156.0" text="Bạn có 5 lần đoán từ" AnchorPane.leftAnchor="329.0" AnchorPane.topAnchor="70.0">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Label  fx:id="wordExplainLabel" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="120" prefHeight="35.0" prefWidth="156.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10; -fx-alignment: center;">
+        <Label fx:id="wordTargetLabel" prefHeight="35.0" prefWidth="156.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10; -fx-alignment: center;" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="120">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+        <HBox prefHeight="50.0" prefWidth="385.0" spacing="150" AnchorPane.leftAnchor="230" AnchorPane.topAnchor="170" />
 
-        <HBox spacing="150" AnchorPane.leftAnchor="230" AnchorPane.topAnchor="170">
-            <Label prefHeight="50" prefWidth="300" text="Điểm: " style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10; -fx-alignment: center; -fx-pref-width: 100;">
-            </Label>
-            <Label fx:id="turnsLeft" prefHeight="50" prefWidth="300" text="Số lượt còn lại:" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10; -fx-alignment: center; -fx-pref-width: 100;">
-            </Label>
-        </HBox>
-
-        <Label layoutX="77.0" layoutY="249.0" prefHeight="40.0" prefWidth="174.0" text="Câu trả lời của bạn: ">
+        <Label layoutX="140.0" layoutY="248.0" prefHeight="40.0" prefWidth="174.0" text="Câu trả lời của bạn: ">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <VBox spacing="10" layoutX="77.0" layoutY="300.0">
-            <HBox spacing="20" layoutX="77.0" layoutY="300.0">
-                <TextField fx:id="englishWord" prefHeight="40.0" prefWidth="400.0" />
-                <Button fx:id="Check" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Kiểm tra" onAction="#checkAns" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold;" />
+        <VBox layoutX="140" layoutY="300.0" spacing="10">
+            <HBox layoutX="100.0" layoutY="300.0" spacing="20">
+                <TextField fx:id="wordExplainField" prefHeight="40.0" prefWidth="400.0" />
+                <Button fx:id="Check" mnemonicParsing="false" onAction="#checkAns" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold;" text="Kiểm tra" />
             </HBox>
             <HBox spacing="20">
-                <Label fx:id="ans" text="Answer" prefHeight="40.0" prefWidth="400.0" style="-fx-border-color: green; -fx-border-width: 2; -fx-border-radius: 3;" />
-                <Button fx:id="playAgainButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="PlayAgain" onAction="#setKeepPlaying" style="-fx-border-color: greeen; -fx-border-width: 2;" />
+                <Label fx:id="ans" prefHeight="40.0" prefWidth="400.0" style="-fx-border-color: green; -fx-border-width: 2; -fx-border-radius: 3;" text="Answer" />
+                <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#setKeepPlaying" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: greeen; -fx-border-width: 2;" text="PlayAgain" />
             </HBox>
 
         </VBox>
-        <Button fx:id="Exit" layoutX="550" layoutY="450" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="Exit" onAction="#setNotKeepPlaying" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" />
+        <Button fx:id="Exit" layoutX="560.0" layoutY="405.0" mnemonicParsing="false" onAction="#setNotKeepPlaying" prefHeight="40.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-font-weight: bold; -fx-border-radius: 10;" text="Exit" />
+         <Label fx:id="turnsLeft" layoutX="565.0" layoutY="170.0" prefHeight="50" prefWidth="120.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 10; -fx-alignment: center; -fx-pref-width: 100;" text="Số lượt còn lại:">
+            </Label>
     </children>
 </AnchorPane>
