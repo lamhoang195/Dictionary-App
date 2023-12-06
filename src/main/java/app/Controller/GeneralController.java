@@ -40,7 +40,7 @@ public class GeneralController implements Initializable {
     private Button menuGames;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        show("/GUI/SearcherGui.fxml");
+        show("/GUI/MenuGame.fxml");
 
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override

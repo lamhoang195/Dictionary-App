@@ -1,3 +1,6 @@
+a	một
+aaaa	aaaa
+aaaaa	aaaaa
 abandoned	bỏ hoang
 abilities	khả năng
 ability	khả năng
@@ -8383,4 +8386,3 @@ zoo	sở thú
 zoom	thu phóng
 zope	dây
 zshops	cửa hàng
-a	aaaa
