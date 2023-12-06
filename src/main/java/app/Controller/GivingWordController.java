@@ -51,7 +51,7 @@ public class GivingWordController extends GameController implements Initializabl
 
     public void checkAns() {
         String answer = wordExplainField.getText();
-        if (game.getWord().getWordTarget().equals(answer)) {
+        if (game.getWord().getWordExplain().equals(answer)) {
             handleCorrectAnswer();
         } else {
             handleIncorrectAnswer();
