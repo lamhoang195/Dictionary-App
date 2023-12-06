@@ -1,11 +1,7 @@
 package app.Controller;
 
-import app.CommandLine.Dictionary;
 
-
-import app.CommandLine.DictionaryManagement;
 import app.CommandLine.GivingWord;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class GivingWordController extends GameController implements Initializable {
     @FXML
-    public Label wordExplainLabel = new Label();
+    public Label wordTargetLabel = new Label();
     public Button Exit;
     public Button playAgainButton;
     public Label ans = new Label();
@@ -32,16 +28,18 @@ public class GivingWordController extends GameController implements Initializabl
     @FXML
     private AnchorPane main;
     @FXML
-    public TextField englishWord = new TextField();
+    public TextField wordExplainField = new TextField();
     GivingWord game;
     @FXML
     public Button Check;
+
+    private boolean correctAnswer = false;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Khởi tạo từ điển và trò chơi
         super.initialize1();
         game = new GivingWord(dictionary);
-        wordExplainLabel.setText(game.getWord().getWordExplain());
+        wordTargetLabel.setText(game.getWord().getWordTarget());
         // System.out.println(game.getWord().getWordExplain());
         Check.setOnAction(event -> checkAns());
         Exit.setOnAction(event->setNotKeepPlaying());
@@ -51,32 +49,14 @@ public class GivingWordController extends GameController implements Initializabl
         ans.setVisible(false);
     }
 
-
     public void checkAns() {
-        String answer = englishWord.getText();
+        String answer = wordExplainField.getText();
         if (game.getWord().getWordTarget().equals(answer)) {
-            // Câu trả lời đúng
-            System.out.println("Correct!");
-            englishWord.setText(englishWord.getText() + " ✓ (Correct");
-            englishWord.setStyle("-fx-text-fill: green;"); // Đặt màu chữ của TextField thành xanh
+            handleCorrectAnswer();
         } else {
-            // Câu trả lời sai
-            System.out.println("Incorrect. Try again.");
-            englishWord.setText("");
-            englishWord.setStyle("-fx-border-color: red"); // Đặt màu chữ của TextField thành đỏ
-            if (this.game.getTurns() == 1) {
-                ans.setVisible(true);
-                ans.setText(this.game.getWord().getWordTarget());
-                playAgainButton.setVisible(true);
-                ans.setVisible(true);
-            }
-            game.setTurns(this.game.getTurns()-1);
-
+            handleIncorrectAnswer();
         }
-        turnsLeft.setText("Số lượt còn lại: " + Integer.toString(this.game.getTurns()));
-
     }
-
 
     @FXML
     private void setChildren(Node node) {
@@ -103,6 +83,47 @@ public class GivingWordController extends GameController implements Initializabl
         }
     }
 
+    private void handleIncorrectAnswer() {
+        // Incorrect guess handling
+        System.out.println("Incorrect. Try again.");
+        wordExplainField.setText("");
+        wordExplainField.setStyle("-fx-border-color: red");
+
+        if (this.game.getTurns() == 1) {
+            ans.setVisible(true);
+            ans.setText("The correct answer is: " + this.game.getWord().getWordExplain());
+            playAgainButton.setVisible(true);
+            playAgainButton.setText("Next Word!");
+        }
+        game.setTurns(game.getTurns() - 1);
+        turnsLeft.setText("Số lượt còn lại: " + game.getTurns());
+    }
+
+    private void handleCorrectAnswer() {
+        // Correct guess handling
+        System.out.println("Correct!");
+        wordExplainField.setText(wordExplainField.getText() + " ✓ (Correct)");
+        wordExplainField.setStyle("-fx-text-fill: green;");
+        correctAnswer = true;
+
+        // Check if user wants to play again
+        playAgainButton.setVisible(true);
+        playAgainButton.setText("Next Word!");
+        ans.setVisible(false);
+    }
+
     public void setKeepPlaying() {
+        // Reset game when "Play Again" is clicked
+        game = new GivingWord(dictionary);
+        turnsLeft.setText("Số lượt còn lại: " + game.getTurns());
+        wordTargetLabel.setText(game.getWord().getWordTarget());
+        ans.setVisible(false);
+        playAgainButton.setVisible(false);
+        wordExplainField.setStyle("-fx-text-fill: black;");
+        if (correctAnswer) {
+            wordExplainField.setText("");
+            wordExplainField.setStyle("");
+            correctAnswer = false;
+        }
     }
 }
