@@ -68,6 +68,7 @@
       <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/jfxwebkit.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/msvcp140.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/msvcp140_1.dll" />
+      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/msvcp140_2.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/prism_common.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/prism_d3d.dll" />
       <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-21/bin/prism_sw.dll" />
