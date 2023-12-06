@@ -36,12 +36,11 @@ In addition, users can learn and play small games to remember words better.
 - FreeTTS 1.2.2 Library
 - API Google Translate
 
-## 4. How to use
+## 5. How to use
 
-- Using this application is very simple. First, download the project to your machine, then run the program.
+- Using this application is very simple. First, download the project to your machine, then run the program using the `Dictionary.jar` file.
 - Enter the word you want to look up into the search box and press the search button to display the definition of that word.
 - We have added some games to help you remember vocabulary better, give it a try!
 
-## 4. Project Structure
 
 

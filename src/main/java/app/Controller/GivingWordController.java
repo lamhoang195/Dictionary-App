@@ -84,7 +84,6 @@ public class GivingWordController extends GameController implements Initializabl
     }
 
     private void handleIncorrectAnswer() {
-        // Incorrect guess handling
         System.out.println("Incorrect. Try again.");
         wordExplainField.setText("");
         wordExplainField.setStyle("-fx-border-color: red");
@@ -106,14 +105,12 @@ public class GivingWordController extends GameController implements Initializabl
         wordExplainField.setStyle("-fx-text-fill: green;");
         correctAnswer = true;
 
-        // Check if user wants to play again
         playAgainButton.setVisible(true);
         playAgainButton.setText("Next Word!");
         ans.setVisible(false);
     }
 
     public void setKeepPlaying() {
-        // Reset game when "Play Again" is clicked
         game = new GivingWord(dictionary);
         turnsLeft.setText("Số lượt còn lại: " + game.getTurns());
         wordTargetLabel.setText(game.getWord().getWordTarget());

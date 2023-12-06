@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="GameMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.GameMenuController">
     <children>
-        <ImageView fx:id="GivingWord" fitHeight="298.0" fitWidth="169.0" layoutX="111.0" layoutY="76.0" pickOnBounds="true" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="70.0">
+        <ImageView fx:id="GivingWord" fitHeight="250.0" fitWidth="250.0" layoutX="455.0" layoutY="126.0" pickOnBounds="true" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="126.0">
             <image>
                 <Image url="@../media/game/giving.png" />
             </image>
@@ -21,7 +21,7 @@
                 <DropShadow />
             </effect>
         </ImageView>
-        <ImageView fx:id="HangMan" fitHeight="372.0" fitWidth="228.0" layoutX="87.0" layoutY="71.0" pickOnBounds="true" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="70.0">
+        <ImageView fx:id="HangMan" fitHeight="250.0" fitWidth="250.0" layoutX="87.0" layoutY="126.0" pickOnBounds="true" AnchorPane.leftAnchor="87.0" AnchorPane.topAnchor="126.0">
             <image>
                 <Image url="@../media/game/hangman.png" />
             </image>
@@ -32,11 +32,11 @@
                 <DropShadow />
             </effect>
         </ImageView>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="479.0" prefHeight="35.0" prefWidth="230.0" text="Hang Man" textAlignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="415.0" prefHeight="35.0" prefWidth="230.0" text="Hang Man" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font></Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="482.0" layoutY="480.0" prefHeight="35.0" prefWidth="229.0" text="Giving Word" textAlignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="464.0" layoutY="415.0" prefHeight="35.0" prefWidth="229.0" text="Giving Word" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font></Label>
