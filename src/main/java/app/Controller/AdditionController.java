@@ -5,9 +5,10 @@ import app.CommandLine.Dictionary;
 import app.CommandLine.DictionaryManagement;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.io.*;
 
@@ -30,7 +31,7 @@ public class AdditionController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         management.insertFromFile(PATH);
         // Xử lý sự kiện khi nhấn nút "Thêm từ"
-        addButton.setOnAction(event -> addWordToFile());
+        addButton.setOnAction(event -> showAlert());
     }
 
     // Thêm từ vào file dictionaries.txt
@@ -43,6 +44,7 @@ public class AdditionController implements Initializable {
         // Sau đó, cập nhật lại file
         exportToFileAdd(PATH, englishWord, vietnameseMeaning);
         System.out.println("Thêm từ: " + englishWord + " - " + vietnameseMeaning);
+
     }
 
 
@@ -81,5 +83,21 @@ public class AdditionController implements Initializable {
         } catch (IOException e) {
             System.out.println("Something went wrong: " + e);
         }
+    }
+
+    public void showAlert(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Do you want to add this word?");
+        alert.setContentText("Choose your option");
+
+        ButtonType buttonTypeYes = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+        ButtonType buttonTypeNo = new ButtonType("No",ButtonBar.ButtonData.NO);
+        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+        alert.showAndWait().ifPresent(response ->{
+            if(response == buttonTypeYes) {
+                addWordToFile();
+            }
+        });
     }
 }

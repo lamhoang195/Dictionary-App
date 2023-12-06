@@ -16,21 +16,22 @@ public class Translate {
     }
 
     public static String translate(String langFrom, String langTo, String text) throws IOException {
-        // INSERT YOU URL HERE
+        // // Tạo URL cho yêu cầu dịch
         String urlStr = "https://script.google.com/macros/s/AKfycbzt3DKEZ95x28Vhi7kVoUKhTjymbnNtOy8q6Q67rkAsddozh5ab2Vql7_4V14ZbnBRG8g/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +
                 "&source=" + langFrom;
-        URL url = new URL(urlStr);
-        StringBuilder response = new StringBuilder();
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestProperty("User-Agent", "Mozilla/5.0");
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        URL url = new URL(urlStr); // Tạo đối tượng URL từ địa chỉ URL đã tạo
+        StringBuilder response = new StringBuilder(); // Chuỗi để lưu trữ phản hồi từ server
+        // Mở kết nối HTTP
+        HttpURLConnection con = (HttpURLConnection) url.openConnection(); // Tạo kết nối HTTP từ URL
+        con.setRequestProperty("User-Agent", "Mozilla/5.0"); // Thiết lập thuộc tính User-Agent để giả vờ là trình duyệt
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream())); // Đọc dữ liệu từ kết nối
         String inputLine;
         while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
+            response.append(inputLine); // Thêm từng dòng vào chuỗi phản hồi
         }
         in.close();
-        return response.toString();
+        return response.toString(); // Trả về chuỗi phản hồi đã xây dựng từ server
     }
 }

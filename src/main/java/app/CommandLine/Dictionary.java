@@ -1,11 +1,7 @@
 package app.CommandLine;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class Dictionary {
     private ArrayList<Word> wordList = new ArrayList<>();

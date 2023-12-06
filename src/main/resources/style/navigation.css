@@ -85,7 +85,7 @@
 }
 
 .button-favourite:hover {
-    -fx-graphic: url('../media/hover/favourite.png');
+    -fx-graphic: url('../media/normal/favourite.png');
 }
 
 .button-favourite.active {
