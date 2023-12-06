@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -36,12 +37,9 @@ public class HangmanController extends GameController implements Initializable {
     @FXML
     public Button Check;
     private Hangman hangman;
-    private boolean keepPlaying;
-    private boolean isExit;
+    public AnchorPane main = new AnchorPane();
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize1();
-        keepPlaying = false;
-        isExit = false;
         hangman = new Hangman(dictionary);
         wordExplainLabel.setText(hangman.getWord().getWordExplain());
         int l = this.hangman.getWord().getWordTarget().length();
@@ -130,7 +128,6 @@ public class HangmanController extends GameController implements Initializable {
     }
 
     public void setKeepPlaying() {
-        keepPlaying = true;
         reset();
     }
 
@@ -144,9 +141,9 @@ public class HangmanController extends GameController implements Initializable {
         img4.setVisible(false);
         img5.setVisible(false);
         img6.setVisible(false);
+        img7.setVisible(false);
         this.show("/GUI/HangmanGui.fxml");
     }
-
     public void setNotKeepPlaying() {
         try {
             // Tải GameGui.fxml
@@ -164,5 +161,10 @@ public class HangmanController extends GameController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void setChildren(Node node) {
+        main.getChildren().clear();
+        main.getChildren().add(node);
     }
 }

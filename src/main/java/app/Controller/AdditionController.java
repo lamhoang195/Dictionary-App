@@ -5,6 +5,7 @@ import app.CommandLine.Dictionary;
 import app.CommandLine.DictionaryManagement;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -34,7 +35,14 @@ import javafx.concurrent.Worker;public class AdditionController implements Initi
     public void initialize(URL url, ResourceBundle resourceBundle) {
         management.insertFromFile(PATH);
         // Xử lý sự kiện khi nhấn nút "Thêm từ"
-        addButton.setOnAction(event -> addWordToFile());
+        addButton.setOnAction(event -> {
+            addWordToFile();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo");
+            alert.setHeaderText(null);
+            alert.setContentText("Thêm từ thành công!");
+            alert.showAndWait();
+        });
     }
 
     // Thêm từ vào file dictionaries.txt

@@ -45,10 +45,8 @@ public class GivingWordController extends GameController implements Initializabl
        // System.out.println(game.getWord().getWordExplain());
         Check.setOnAction(event -> checkAns());
         Exit.setOnAction(event->setNotKeepPlaying());
-        playAgainButton.setOnAction(event -> setKeepPlaying());
+        playAgainButton.setOnAction(event -> reset());
         turnsLeft.setText("Số lượt còn lại: " + Integer.toString(this.game.getTurns()));
-        playAgainButton.setVisible(false);
-        ans.setVisible(false);
     }
 
 
@@ -102,7 +100,10 @@ public class GivingWordController extends GameController implements Initializabl
             e.printStackTrace();
         }
     }
-
-    public void setKeepPlaying() {
-    }
+     public void reset() {
+         playAgainButton.setVisible(false);
+         ans.setVisible(false);
+         turnsLeft.setText("");
+         this.show("/GUI/GivingWordGui.fxml");
+     }
 }

@@ -81,9 +81,9 @@ public class Hangman extends Game{
     }
 
     private void displayHangman() {
-        int remainingAttempts = this.turns + 1; // Số lần còn lại trước khi thua
-        System.out.println("Attempts left: " + remainingAttempts);
-        switch (this.turns) {
+        //int remainingAttempts = this.turns; // Số lần còn lại trước khi thua
+        System.out.println("Attempts left: " + (this.turns + 1));
+        switch (this.turns + 1) {
             case 6:
                 L_Hold();
                 break;
@@ -102,9 +102,6 @@ public class Hangman extends Game{
             case 1:
                 hangLeg1();
                 break;
-            case 0:
-                hangLeg2();
-                break;
         }
     }
     public boolean checkCorrect() {
@@ -116,7 +113,7 @@ public class Hangman extends Game{
         return false;
     }
     private boolean isGameOver() {
-        return this.turns == 0 || new String(guessedLetters).equals(this.word.getWordTarget());
+        return this.turns + 1 == 0 || new String(guessedLetters).equals(this.word.getWordTarget());
     }
 
     public char[] getGuessedLetters(){
@@ -143,7 +140,6 @@ public class Hangman extends Game{
         while (!isGameOver()) {
             displayProgress();
             displayHangman();
-
             System.out.print("Enter a letter: ");
             char guess = scanner.next().charAt(0);
 
@@ -157,6 +153,7 @@ public class Hangman extends Game{
             else {
                 System.out.println("Incorrect guess.");
             }
+            if (this.turns + 1== 0) hangLeg2();
         }
     }
 }

@@ -71,12 +71,6 @@ public class GeneralController implements Initializable {
             }
         });
 
-        GivingWordButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                show("/GUI/GivingWordGui.fxml");
-            }
-        });
         playButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

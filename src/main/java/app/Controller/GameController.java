@@ -24,7 +24,7 @@ public class GameController implements Initializable {
     @FXML
     public Button playButton;
     public Button exitButton;
-    public AnchorPane Game;
+    public AnchorPane Game = new AnchorPane();
     public ImageView HangMan;
     public ImageView GivingWord;
     @FXML

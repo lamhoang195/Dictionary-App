@@ -3547,6 +3547,7 @@ hero	anh hùng
 heroes	anh hùng
 herself	bản thân
 hey	này
+hhh	check
 hi	chào
 hidden	ẩn
 hide	trốn

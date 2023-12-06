@@ -40,7 +40,7 @@
             </HBox>
             <HBox spacing="20">
                 <Label fx:id="ans" text="Answer" prefHeight="40.0" prefWidth="400.0" style="-fx-border-color: green; -fx-border-width: 2; -fx-border-radius: 3;" />
-                <Button fx:id="playAgainButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="PlayAgain" onAction="#setKeepPlaying" style="-fx-border-color: greeen; -fx-border-width: 2;" />
+                <Button fx:id="playAgainButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="PlayAgain" onAction="#reset" style="-fx-border-color: greeen; -fx-border-width: 2;" />
             </HBox>
 
         </VBox>

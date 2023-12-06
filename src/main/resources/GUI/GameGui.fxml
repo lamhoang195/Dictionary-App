@@ -13,7 +13,7 @@
     <children>
         <ImageView fx:id="GivingWord" fitHeight="372.0" fitWidth="228.0" layoutX="111.0" layoutY="76.0" pickOnBounds="true" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="70.0">
             <image>
-                <Image url="@../media/game/7.jpg" />
+                <Image url="@../media/game/givingWord.png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -24,7 +24,7 @@
         </ImageView>
         <ImageView fx:id="HangMan" fitHeight="372.0" fitWidth="228.0" layoutX="87.0" layoutY="71.0" pickOnBounds="true" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="70.0">
             <image>
-                <Image url="@../media/game/1.jpg" />
+                <Image url="@../media/game/hangman.png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />
