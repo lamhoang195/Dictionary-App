@@ -1,22 +1,31 @@
 package app.Controller;
 
-
+import app.CommandLine.GivingWord;
+import app.CommandLine.Word;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.HTMLEditor;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GeneralController implements Initializable {
     @FXML
     private AnchorPane main;
-    @FXML
-    public AnchorPane parent;
     @FXML
     private Button bookmarkButton;
     @FXML
@@ -26,13 +35,12 @@ public class GeneralController implements Initializable {
     @FXML
     private Button addButton;
     @FXML
+    private Button HangManButton;
+    @FXML
     private Button menuGames;
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        show("/GUI/MenuGame.fxml");
+        show("/GUI/SearcherGui.fxml");
 
         searchButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
