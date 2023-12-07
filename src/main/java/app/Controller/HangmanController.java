@@ -3,6 +3,7 @@ package app.Controller;
 import app.CommandLine.Hangman;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -35,6 +36,8 @@ public class HangmanController extends GameController implements Initializable {
     private ImageView img1, img2, img3, img4, img5, img6, img7;
     @FXML
     public Button Check;
+    @FXML
+    public Button giving;
     private Hangman hangman;
     private boolean keepPlaying;
     private boolean isExit;
@@ -59,6 +62,12 @@ public class HangmanController extends GameController implements Initializable {
         playAgain.setOnAction(event->setKeepPlaying());
         Exit.setOnAction(event->setNotKeepPlaying());
         updateUI();
+        giving.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/GivingWordGui.fxml");
+            }
+        });
 
     }
     public void displayGuessLetters() {
@@ -74,6 +83,7 @@ public class HangmanController extends GameController implements Initializable {
     private void updateUI() {
         // Cập nhật giao diện người dùng dựa trên trạng thái hiện tại của trò chơi
         if (this.hangman.checkCorrect()) {
+            displayGuessLetters();
             checkWin.setVisible(true);
             checkWin.setStyle("-fx-text-fill :green; -fx-alignment: center;");
             wordTarget.setText(hangman.getWord().getWordTarget());

@@ -2,6 +2,8 @@ package app.Controller;
 
 
 import app.CommandLine.GivingWord;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,6 +31,8 @@ public class GivingWordController extends GameController implements Initializabl
     private AnchorPane main;
     @FXML
     public TextField wordExplainField = new TextField();
+    @FXML
+    public Button hangman;
     GivingWord game;
     @FXML
     public Button Check;
@@ -47,11 +51,17 @@ public class GivingWordController extends GameController implements Initializabl
         turnsLeft.setText("Số lượt còn lại: " + Integer.toString(this.game.getTurns()));
         playAgainButton.setVisible(false);
         ans.setVisible(false);
+        hangman.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                show("/GUI/HangmanGui.fxml");
+            }
+        });
     }
 
     public void checkAns() {
         String answer = wordExplainField.getText();
-        if (game.getWord().getWordTarget().equals(answer)) {
+        if (game.getWord().getWordExplain().equals(answer)) {
             handleCorrectAnswer();
         } else {
             handleIncorrectAnswer();
@@ -84,8 +94,6 @@ public class GivingWordController extends GameController implements Initializabl
     }
 
     private void handleIncorrectAnswer() {
-        // Incorrect guess handling
-        System.out.println("Incorrect. Try again.");
         wordExplainField.setText("");
         wordExplainField.setStyle("-fx-border-color: red");
 
@@ -102,8 +110,8 @@ public class GivingWordController extends GameController implements Initializabl
     private void handleCorrectAnswer() {
         // Correct guess handling
         System.out.println("Correct!");
-        wordExplainField.setText(wordExplainField.getText() + " ✓ (Correct)");
         wordExplainField.setStyle("-fx-text-fill: green;");
+        wordExplainField.setStyle("-fx-border-color: green");
         correctAnswer = true;
 
         // Check if user wants to play again
