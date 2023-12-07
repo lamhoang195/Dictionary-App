@@ -105,7 +105,7 @@ public class DictionaryCommandLine {
                             System.out.println("Incorrect input. Exit");
                             break;
                         }
-                        System.out.println("Type C to Play or ESC-Enter to Exit");
+                        System.out.println("Type C to Play Again or ESC-Enter to Exit");
                         option = choose.nextLine();
                     }
 
